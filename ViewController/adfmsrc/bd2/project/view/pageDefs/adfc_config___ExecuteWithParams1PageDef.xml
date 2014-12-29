@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="adfc_config___ExecuteWithParams1PageDef"
+                Package="bd2.project.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="FlightByID" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="FlightByIDIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="FlightByIDIterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="flight_id_prm" NDValue="#{pageFlowScope.FlightIdPrm}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

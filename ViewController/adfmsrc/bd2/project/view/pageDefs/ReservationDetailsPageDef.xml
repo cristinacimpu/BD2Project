@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="ReservationDetailsPageDef"
+                Package="bd2.project.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FlightByID" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="FlightByIDIterator"/>
+    <iterator Binds="ClientsVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="ClientsVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FlightByIDIterator" id="Src">
+      <AttrNames>
+        <Item Value="Src"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="Dest">
+      <AttrNames>
+        <Item Value="Dest"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="DepartureHour">
+      <AttrNames>
+        <Item Value="DepartureHour"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="DepartureDay">
+      <AttrNames>
+        <Item Value="DepartureDay"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="Duration">
+      <AttrNames>
+        <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="Price">
+      <AttrNames>
+        <Item Value="Price"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightByIDIterator" id="FlightId">
+      <AttrNames>
+        <Item Value="FlightId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Cnp">
+      <AttrNames>
+        <Item Value="Cnp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Firstname">
+      <AttrNames>
+        <Item Value="Firstname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Lastname">
+      <AttrNames>
+        <Item Value="Lastname"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="PhoneNo">
+      <AttrNames>
+        <Item Value="PhoneNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="Username">
+      <AttrNames>
+        <Item Value="Username"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ClientsVOIterator" id="ClientId">
+      <AttrNames>
+        <Item Value="ClientId"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="doReservationDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doReservationDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.doReservationDB_BD2ProjectAppModuleDataControl_dataProvider_doReservationDB_result">
+      <NamedData NDName="clientId" NDType="java.lang.String"/>
+      <NamedData NDName="flightId" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

@@ -24,7 +24,10 @@
                 <f:facet name="toolbar">
                   <af:toolbar id="t1">
                     <af:commandButton text="Rezerva bilet" id="cb1"
-                                      action="#{backingBeanScope.mainPage_bean.doReservation}"/>
+                                      action="goToReservation">
+                      <af:setActionListener from="#{bindings.FlightId.attributeValue}"
+                                            to="#{pageFlowScope.FlightIdPrm}"/>
+                    </af:commandButton>
                   </af:toolbar>
                 </f:facet>
                 <f:facet name="statusbar"/>

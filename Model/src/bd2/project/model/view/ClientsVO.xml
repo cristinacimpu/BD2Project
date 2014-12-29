@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClientsVO"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="bd2.project.model.view.ClientsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="username_prm"
+    Kind="where"
+    Type="java.lang.String"/>
+  <SQLQuery>
+    <![CDATA[select client_id, cnp, firstname, lastname, address, phone_no, email, username from clients
+where username = :username_prm]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="ClientId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="CLIENT_ID"
+    Expression="CLIENT_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cnp"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="13"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="CNP"
+    Expression="CNP"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="14"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Firstname"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FIRSTNAME"
+    Expression="FIRSTNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Lastname"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LASTNAME"
+    Expression="LASTNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Address"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ADDRESS"
+    Expression="ADDRESS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhoneNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PHONE_NO"
+    Expression="PHONE_NO"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Email"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EMAIL"
+    Expression="EMAIL"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Username"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="USERNAME"
+    Expression="USERNAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="bd2.project.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

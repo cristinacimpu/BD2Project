@@ -8,6 +8,8 @@ import javax.faces.context.FacesContext;
 import oracle.adf.model.BindingContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
 
+import oracle.adf.view.rich.context.AdfFacesContext;
+
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
@@ -47,6 +49,7 @@ public class LoginPageBean {
         
         if (j_username.getValue() != null && j_password.getValue() != null) {
             usernameStr = j_username.getValue().toString();
+            AdfFacesContext.getCurrentInstance().getPageFlowScope().put("user_prm", usernameStr);
             passwordStr = j_password.getValue().toString();
             
         } else if (j_username.getValue() == null) {
@@ -63,7 +66,7 @@ public class LoginPageBean {
             return null;
         }
         
-        //apeleaza functia din bd care returneaza 'D' daca utilizatorul exista
+        //apeleaza functia din appModule care returneaza 'D' daca utilizatorul exista
         // si 'N' daca utilizatorul nu exista
         BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
         OperationBinding ob = bindings.getOperationBinding("doLoginDB");

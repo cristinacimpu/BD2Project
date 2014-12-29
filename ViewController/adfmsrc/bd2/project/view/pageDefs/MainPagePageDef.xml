@@ -11,6 +11,9 @@
     <searchRegion Criteria="FlightsVOCriteria"
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="FlightsVOIterator" id="FlightsVOCriteriaQuery"/>
+    <iterator Binds="FlightByID" RangeSize="10"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="FlightByIDIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="FlightsVOIterator" id="FlightsVO">
@@ -27,5 +30,10 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="FlightsVOIterator" id="FlightId">
+      <AttrNames>
+        <Item Value="FlightId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

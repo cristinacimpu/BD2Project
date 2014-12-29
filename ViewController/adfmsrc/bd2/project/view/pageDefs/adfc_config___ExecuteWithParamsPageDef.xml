@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="adfc_config___ExecuteWithParamsPageDef"
+                Package="bd2.project.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ClientsVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="ClientsVOIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ClientsVOIterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="username_prm" NDValue="#{pageFlowScope.user_prm}"
+                 NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

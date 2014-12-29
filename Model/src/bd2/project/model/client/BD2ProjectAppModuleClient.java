@@ -16,9 +16,16 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
     public BD2ProjectAppModuleClient() {
     }
 
+
     public String doLoginDB(String userName, String password) {
         Object _ret =
             this.riInvokeExportedMethod(this,"doLoginDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {userName, password});
+        return (String)_ret;
+    }
+
+    public String doReservationDB(String clientId, String flightId) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"doReservationDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {clientId, flightId});
         return (String)_ret;
     }
 }

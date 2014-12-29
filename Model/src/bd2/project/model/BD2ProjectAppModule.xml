@@ -27,6 +27,16 @@
       Name="FlightsVOCriteria"
       FullName="bd2.project.model.view.FlightsVO.FlightsVOCriteria"/>
   </ViewUsage>
+  <ViewUsage
+    Name="ClientsVO"
+    ViewObjectName="bd2.project.model.view.ClientsVO"/>
+  <ViewUsage
+    Name="FlightByID"
+    ViewObjectName="bd2.project.model.view.FlightByID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="bd2.project.model.ModelBundle"/>
+  </ResourceBundle>
   <ClientInterface>
     <Method
       Name="doLoginDB">
@@ -39,9 +49,16 @@
         Name="password"
         Type="java.lang.String"/>
     </Method>
+    <Method
+      Name="doReservationDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="clientId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="flightId"
+        Type="java.lang.String"/>
+    </Method>
   </ClientInterface>
-  <ResourceBundle>
-    <PropertiesBundle
-      PropertiesFile="bd2.project.model.ModelBundle"/>
-  </ResourceBundle>
 </AppModule>

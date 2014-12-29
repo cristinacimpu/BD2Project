@@ -23,9 +23,9 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
      * This is the default constructor (do not remove).
      */
     public BD2ProjectAppModuleImpl() {
-        
+
     }
-    
+
     public String doLoginDB(String userName, String password) {
         CallableStatement st = null;
         String rezult = null;
@@ -35,13 +35,42 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
-        getDBTransaction().createCallableStatement("begin" + ":1:=dologin(:2, :3); end;",
+ getDBTransaction().createCallableStatement("begin" + " :1:=dologin(:2, :3); end;",
                                             0);
-            st.registerOutParameter(1, OracleTypes.CHAR); // param de iesire; poate fi fol la proc
+            st.registerOutParameter(1,
+                                    OracleTypes.CHAR); // param de iesire; poate fi fol la proc
             st.setString(2, userName);
             st.setString(3, password);
             st.execute();
             rezult = st.getString(1); // iau val de iesire
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public String doReservationDB(String clientId, String flightId) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+ getDBTransaction().createCallableStatement("begin" + " doreservation(:1, :2, :3); end;",
+                                            0);
+            st.registerOutParameter(3,
+                                    OracleTypes.CHAR);
+            st.setString(1, clientId);
+            st.setString(2, flightId);
+            st.execute();
+            rezult = st.getString(3);
+            
             st.close();
             ps.close();
             return rezult.trim();
@@ -57,5 +86,21 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
      */
     public ViewObjectImpl getFlightsVO() {
         return (ViewObjectImpl)findViewObject("FlightsVO");
+    }
+
+    /**
+     * Container's getter for ClientsVO.
+     * @return ClientsVO
+     */
+    public ViewObjectImpl getClientsVO() {
+        return (ViewObjectImpl)findViewObject("ClientsVO");
+    }
+
+    /**
+     * Container's getter for FlightByID.
+     * @return FlightByID
+     */
+    public ViewObjectImpl getFlightByID() {
+        return (ViewObjectImpl)findViewObject("FlightByID");
     }
 }

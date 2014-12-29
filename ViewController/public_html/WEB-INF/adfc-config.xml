@@ -6,11 +6,58 @@
   <view id="MainPage">
     <page>/MainPage.jspx</page>
   </view>
+  <view id="ReservationDetails">
+    <page>/ReservationDetails.jspx</page>
+  </view>
+  <method-call id="ExecuteWithParams">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome id="__33">
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="ExecuteWithParams1">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome id="__39">
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
   <control-flow-rule id="__9">
     <from-activity-id id="__10">Login</from-activity-id>
     <control-flow-case id="__12">
       <from-outcome id="__13">ok</from-outcome>
       <to-activity-id id="__11">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id id="__24">MainPage</from-activity-id>
+    <control-flow-case id="__25">
+      <from-outcome id="__27">goToReservation</from-outcome>
+      <to-activity-id id="__26">ExecuteWithParams</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__28">
+    <from-activity-id id="__29">ReservationDetails</from-activity-id>
+    <control-flow-case id="__30">
+      <from-outcome id="__32">back</from-outcome>
+      <to-activity-id id="__31">MainPage</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__45">
+      <from-outcome id="__46">ok</from-outcome>
+      <to-activity-id id="__22">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__34">
+    <from-activity-id id="__35">ExecuteWithParams</from-activity-id>
+    <control-flow-case id="__37">
+      <from-outcome id="__36">ExecuteWithParams</from-outcome>
+      <to-activity-id id="__38">ExecuteWithParams1</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__40">
+    <from-activity-id id="__41">ExecuteWithParams1</from-activity-id>
+    <control-flow-case id="__42">
+      <from-outcome id="__44">ExecuteWithParams</from-outcome>
+      <to-activity-id id="__43">ReservationDetails</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__2">
@@ -27,5 +74,10 @@
     <managed-bean-name id="__17">mainPage_bean</managed-bean-name>
     <managed-bean-class id="__16">bd2.project.view.backing.MainPageBean</managed-bean-class>
     <managed-bean-scope id="__15">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__20">
+    <managed-bean-name id="__19">reservationDetails_bean</managed-bean-name>
+    <managed-bean-class id="__18">bd2.project.view.backing.ReservationDetailsPageBean</managed-bean-class>
+    <managed-bean-scope id="__21">backingBean</managed-bean-scope>
   </managed-bean>
 </adfc-config>
