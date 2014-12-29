@@ -1,0 +1,8 @@
+#ignore Model/classes/
+Model/classes/
+
+#ignore ViewController/classes/
+ViewController/classes/
+
+#ignore .data
+.data/
