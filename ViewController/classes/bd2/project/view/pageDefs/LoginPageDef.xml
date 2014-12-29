@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="LoginPageDef"
+                Package="bd2.project.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="doLoginDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doLoginDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.doLoginDB_BD2ProjectAppModuleDataControl_dataProvider_doLoginDB_result">
+      <NamedData NDName="userName" NDType="java.lang.String"/>
+      <NamedData NDName="password" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>
