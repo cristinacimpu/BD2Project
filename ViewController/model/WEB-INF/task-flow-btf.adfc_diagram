@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Orthogonal</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">login</property>
+      <property
+         name="page">/pages/home.jsff</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>login&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">229.24121</property>
+      <property
+         name="x">242.5</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">mainPage</property>
+      <property
+         name="page">/pages/mainPage.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>mainPage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">227.94238</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">557.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">ok</property>
+      <property
+         name="sdm:polyPoints">R50,400.0,228.89062,400.0,227.5918,L50</property>
+   </ControlFlowCase>
+</SDM>

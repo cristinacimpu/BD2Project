@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="task-flow-btf">
+    <default-activity id="__1">login</default-activity>
+    <view id="login">
+      <page>/pages/home.jsff</page>
+    </view>
+    <view id="mainPage">
+      <page>/pages/mainPage.jsff</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">login</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">ok</from-outcome>
+        <to-activity-id id="__4">mainPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

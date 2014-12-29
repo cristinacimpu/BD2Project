@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth" halign="center"
+                       layout="scroll">
+    <af:panelTabbed id="pt1">
+      <af:showDetailItem text="Cautare zboruri" id="sdi1"/>
+      <af:showDetailItem text="Cumpara bilete" id="sdi2"/>
+      <af:showDetailItem text="Despre noi" id="sdi3"/>
+      <af:showDetailItem text="Contact" id="sdi4"/>
+    </af:panelTabbed>
+  </af:panelGroupLayout>
+</jsp:root>

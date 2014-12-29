@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="Autentificare" id="pb1">
+    <f:facet name="toolbar"/>
+    <af:panelFormLayout id="pfl1" inlineStyle="text-align:center;"
+                        clientComponent="true">
+      <f:facet name="footer">
+        <af:commandButton text="Conectare" id="cb1"
+                          action="#{login_old.doLogin}"/>
+      </f:facet>
+      <af:inputText label="Utilizator" id="j_username" clientComponent="true"
+                    binding="#{login_old.j_password}" autoSubmit="true"/>
+      <af:message id="m1" messageType="error" for="j_username"/>
+      <af:inputText label="Parola" id="j_password"
+                    clientComponent="true" binding="#{login_old.j_password}"
+                    autoSubmit="true" secret="true" rows="1"/>
+      <af:message id="message1" messageType="error" for="j_password"/>
+    </af:panelFormLayout>
+  </af:panelBox>
+</jsp:root>

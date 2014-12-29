@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="bd2.project.model.BD2ProjectAppModule">
+      <AppModuleConfig name="BD2ProjectAppModuleLocal" ApplicationName="bd2.project.model.BD2ProjectAppModule" DeployPlatform="LOCAL" jbo.project="bd2.project.model.Model">
+         <Security AppModuleJndiName="bd2.project.model.BD2ProjectAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/MyConnDS"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="BD2ProjectAppModuleShared" ApplicationName="bd2.project.model.BD2ProjectAppModule" DeployPlatform="LOCAL" jbo.project="bd2.project.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="bd2.project.model.BD2ProjectAppModule"/>
+         <Custom JDBCDataSource="java:comp/env/jdbc/MyConnDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
