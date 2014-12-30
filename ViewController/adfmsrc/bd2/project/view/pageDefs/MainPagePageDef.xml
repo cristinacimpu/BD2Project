@@ -14,6 +14,12 @@
     <iterator Binds="FlightByID" RangeSize="10"
               DataControl="BD2ProjectAppModuleDataControl"
               id="FlightByIDIterator"/>
+    <iterator Binds="ReservationsVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="ReservationsVOIterator"/>
+    <searchRegion Binds="ReservationsVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ReservationsVOQuery"/>
   </executables>
   <bindings>
     <tree IterBinding="FlightsVOIterator" id="FlightsVO">
@@ -35,5 +41,19 @@
         <Item Value="FlightId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="ReservationsVOIterator" id="ReservationsVO">
+      <nodeDefinition DefName="bd2.project.model.view.ReservationsVO"
+                      Name="ReservationsVO0">
+        <AttrNames>
+          <Item Value="ReservationId"/>
+          <Item Value="Src"/>
+          <Item Value="Dest"/>
+          <Item Value="DepartureHour"/>
+          <Item Value="DepartureDay"/>
+          <Item Value="Duration"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

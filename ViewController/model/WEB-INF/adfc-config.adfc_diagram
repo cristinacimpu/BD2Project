@@ -83,9 +83,9 @@
    <MethodCall
       id="MethodCall10">
       <property
-         name="activityId">ExecuteWithParams</property>
+         name="activityId">EWPClientUsername</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>EWPClientUsername&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property
@@ -106,9 +106,9 @@
    <MethodCall
       id="MethodCall12">
       <property
-         name="activityId">ExecuteWithParams1</property>
+         name="activityId">EWPFlightById</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams1&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>EWPFlightById&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
          name="exceptionHandler">false</property>
       <property

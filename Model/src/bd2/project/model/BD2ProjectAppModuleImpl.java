@@ -103,4 +103,12 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
     public ViewObjectImpl getFlightByID() {
         return (ViewObjectImpl)findViewObject("FlightByID");
     }
+
+    /**
+     * Container's getter for ReservationsVO.
+     * @return ReservationsVO
+     */
+    public ViewObjectImpl getReservationsVO() {
+        return (ViewObjectImpl)findViewObject("ReservationsVO");
+    }
 }

@@ -14,9 +14,9 @@
     <page path="/MainPage.jspx" usageId="bd2_project_view_MainPagePageDef"/>
     <page path="/ReservationDetails.jspx"
           usageId="bd2_project_view_ReservationDetailsPageDef"/>
-    <page path="PageFlow#ExecuteWithParams"
+    <page path="PageFlow#EWPClientUsername"
           usageId="bd2_project_view_adfc_config___ExecuteWithParamsPageDef"/>
-    <page path="PageFlow#ExecuteWithParams1"
+    <page path="PageFlow#EWPFlightById"
           usageId="bd2_project_view_adfc_config___ExecuteWithParams1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>

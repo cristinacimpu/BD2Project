@@ -9,13 +9,13 @@
   <view id="ReservationDetails">
     <page>/ReservationDetails.jspx</page>
   </view>
-  <method-call id="ExecuteWithParams">
+  <method-call id="EWPClientUsername">
     <method>#{bindings.ExecuteWithParams.execute}</method>
     <outcome id="__33">
       <fixed-outcome>ExecuteWithParams</fixed-outcome>
     </outcome>
   </method-call>
-  <method-call id="ExecuteWithParams1">
+  <method-call id="EWPFlightById">
     <method>#{bindings.ExecuteWithParams.execute}</method>
     <outcome id="__39">
       <fixed-outcome>ExecuteWithParams</fixed-outcome>
@@ -32,7 +32,7 @@
     <from-activity-id id="__24">MainPage</from-activity-id>
     <control-flow-case id="__25">
       <from-outcome id="__27">goToReservation</from-outcome>
-      <to-activity-id id="__26">ExecuteWithParams</to-activity-id>
+      <to-activity-id id="__26">EWPClientUsername</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__28">
@@ -47,14 +47,14 @@
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__34">
-    <from-activity-id id="__35">ExecuteWithParams</from-activity-id>
+    <from-activity-id id="__35">EWPClientUsername</from-activity-id>
     <control-flow-case id="__37">
       <from-outcome id="__36">ExecuteWithParams</from-outcome>
-      <to-activity-id id="__38">ExecuteWithParams1</to-activity-id>
+      <to-activity-id id="__38">EWPFlightById</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__40">
-    <from-activity-id id="__41">ExecuteWithParams1</from-activity-id>
+    <from-activity-id id="__41">EWPFlightById</from-activity-id>
     <control-flow-case id="__42">
       <from-outcome id="__44">ExecuteWithParams</from-outcome>
       <to-activity-id id="__43">ReservationDetails</to-activity-id>

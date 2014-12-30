@@ -33,6 +33,9 @@
   <ViewUsage
     Name="FlightByID"
     ViewObjectName="bd2.project.model.view.FlightByID"/>
+  <ViewUsage
+    Name="ReservationsVO"
+    ViewObjectName="bd2.project.model.view.ReservationsVO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="bd2.project.model.ModelBundle"/>
