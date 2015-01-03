@@ -56,5 +56,26 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction id="buyTicketDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="buyTicketDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.buyTicketDB_BD2ProjectAppModuleDataControl_dataProvider_buyTicketDB_result">
+      <NamedData NDName="reservation_id" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="card_no" NDValue="" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="ReservationsVOIterator" id="ReservationId">
+      <AttrNames>
+        <Item Value="ReservationId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ReservationsVOIterator" id="ExecuteWithParams"
+            InstanceName="BD2ProjectAppModuleDataControl.ReservationsVO"
+            DataControl="BD2ProjectAppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="username_prm" NDValue="#{pageFlowScope.user_prm}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

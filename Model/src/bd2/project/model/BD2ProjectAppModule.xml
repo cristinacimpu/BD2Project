@@ -59,5 +59,16 @@
         Name="flightId"
         Type="java.lang.String"/>
     </Method>
+    <Method
+      Name="buyTicketDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="reservation_id"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="card_no"
+        Type="java.lang.String"/>
+    </Method>
   </ClientInterface>
 </AppModule>

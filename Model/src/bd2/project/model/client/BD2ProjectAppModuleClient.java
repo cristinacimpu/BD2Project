@@ -28,4 +28,10 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
             this.riInvokeExportedMethod(this,"doReservationDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {userName, flightId});
         return (String)_ret;
     }
+
+    public String buyTicketDB(String reservation_id, String card_no) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"buyTicketDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {reservation_id, card_no});
+        return (String)_ret;
+    }
 }

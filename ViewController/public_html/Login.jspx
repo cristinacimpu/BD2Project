@@ -14,8 +14,11 @@
                                  styleClass="AFStretchWidth" halign="center">
               <af:panelFormLayout id="pfl1">
                 <f:facet name="footer">
-                  <af:commandButton text="Conectare" id="cb1"
-                                    action="#{login.doLogin}"/>
+                  <af:group id="g1">
+                    <af:commandButton text="Conectare" id="cb1"
+                                      action="#{login.doLogin}"/>
+                    <af:commandLink text="Cont nou" id="cl1"/>
+                  </af:group>
                 </f:facet>
                 <af:inputText label="Utilizator" id="j_username"
                               clientComponent="true"

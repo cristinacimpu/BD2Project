@@ -40,6 +40,10 @@
       <from-outcome id="__27">goToReservation</from-outcome>
       <to-activity-id id="__26">EWPClientUsername</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__53">
+      <from-outcome id="__55">logout</from-outcome>
+      <to-activity-id id="__54">Login</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__28">
     <from-activity-id id="__29">ReservationDetails</from-activity-id>

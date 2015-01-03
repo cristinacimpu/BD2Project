@@ -11,6 +11,9 @@
     <iterator Binds="ClientsVO" RangeSize="25"
               DataControl="BD2ProjectAppModuleDataControl"
               id="ClientsVOIterator"/>
+    <iterator Binds="ReservationsVO" RangeSize="10"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="ReservationsVOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="FlightByIDIterator" id="Src">
@@ -97,5 +100,12 @@
       <NamedData NDName="userName" NDValue="" NDType="java.lang.String"/>
       <NamedData NDName="flightId" NDValue="" NDType="java.lang.String"/>
     </methodAction>
+    <action IterBinding="ReservationsVOIterator" id="ExecuteWithParams"
+            InstanceName="BD2ProjectAppModuleDataControl.ReservationsVO"
+            DataControl="BD2ProjectAppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="username_prm" NDValue="#{pageFlowScope.user_prm}"
+                 NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

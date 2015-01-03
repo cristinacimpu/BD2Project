@@ -9,4 +9,6 @@ public interface BD2ProjectAppModule extends ApplicationModule {
     String doLoginDB(String userName, String password);
 
     String doReservationDB(String userName, String flightId);
+
+    String buyTicketDB(String reservation_id, String card_no);
 }

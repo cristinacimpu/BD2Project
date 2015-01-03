@@ -179,6 +179,9 @@ where a.flight_id = b.flight_id and a.username = :username_prm]]>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ReservationId"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="bd2.project.model.ModelBundle"/>

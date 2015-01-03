@@ -45,6 +45,10 @@ public class ReservationDetailsPageBean {
                          ". Va multumim!");
             fm.setSeverity(FacesMessage.SEVERITY_INFO);
             FacesContext.getCurrentInstance().addMessage(null, fm);
+            
+            OperationBinding ob1 = bindings.getOperationBinding("ExecuteWithParams");
+            ob1.execute();
+            
         } else if (result.equals("N")) {
             FacesMessage msg =
                 new FacesMessage(FacesMessage.SEVERITY_ERROR, "S-a produs o eroare.",

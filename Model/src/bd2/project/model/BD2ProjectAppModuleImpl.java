@@ -80,6 +80,34 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
+    
+    public String buyTicketDB(String reservation_id, String card_no) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+        getDBTransaction().createCallableStatement("begin" + " buy_ticket(:1, :2, :3); end;",
+                                            0);
+            st.registerOutParameter(3,
+                                    OracleTypes.CHAR);
+            st.setString(1, reservation_id);
+            st.setString(2, card_no);
+            st.execute();
+            rezult = st.getString(3);
+            
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
     /**
