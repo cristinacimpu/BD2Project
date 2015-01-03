@@ -94,8 +94,8 @@
                   RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="doReservationDB" IsViewObjectMethod="false"
                   ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.doReservationDB_BD2ProjectAppModuleDataControl_dataProvider_doReservationDB_result">
-      <NamedData NDName="clientId" NDType="java.lang.String"/>
-      <NamedData NDName="flightId" NDType="java.lang.String"/>
+      <NamedData NDName="userName" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="flightId" NDValue="" NDType="java.lang.String"/>
     </methodAction>
   </bindings>
 </pageDefinition>

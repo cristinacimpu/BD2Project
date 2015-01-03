@@ -6,6 +6,8 @@ import javax.faces.context.FacesContext;
 import oracle.adf.model.BindingContext;
 import oracle.adf.share.ADFContext;
 
+import oracle.adf.view.rich.context.AdfFacesContext;
+
 import oracle.binding.AttributeBinding;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
@@ -30,17 +32,9 @@ public class ReservationDetailsPageBean {
             System.out.println("flight_id_prm = "  + flight_id_prm);
         }
         
-        AttributeBinding clientIdBinding =
-            (AttributeBinding)bindings.getControlBinding("ClientId");
-        String client_id_prm = null;
-        if (clientIdBinding.getInputValue() != null) {
-            client_id_prm = clientIdBinding.getInputValue().toString();
-            System.out.println("client_id_prm = "  + client_id_prm);
-        }
-        
         OperationBinding ob =
             (OperationBinding)bindings.getOperationBinding("doReservationDB");
-        ob.getParamsMap().put("clientId", client_id_prm);
+        ob.getParamsMap().put("userName", AdfFacesContext.getCurrentInstance().getPageFlowScope().get("user_prm").toString());
         ob.getParamsMap().put("flightId", flight_id_prm);
         ob.execute();
         

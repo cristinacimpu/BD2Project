@@ -14,108 +14,117 @@
         <af:panelTabbed id="pt1">
           <af:showDetailItem text="Cautare zboruri" id="sdi1">
             <af:panelGroupLayout layout="vertical" id="pgl1">
-              <af:panelHeader text=" " id="ph1">
-                <af:query id="qryId1" headerText="Cauta zbor" disclosed="true"
-                          value="#{bindings.FlightsVOCriteriaQuery.queryDescriptor}"
-                          model="#{bindings.FlightsVOCriteriaQuery.queryModel}"
-                          queryListener="#{bindings.FlightsVOCriteriaQuery.processQuery}"
-                          queryOperationListener="#{bindings.FlightsVOCriteriaQuery.processQueryOperation}"
-                          resultComponentId="::pc1:resId1"/>
-              </af:panelHeader>
-              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
-                <f:facet name="menus"/>
-                <f:facet name="toolbar">
-                  <af:toolbar id="t1">
-                    <af:commandButton text="Rezerva bilet" id="cb1"
-                                      action="goToReservation">
-                      <af:setActionListener from="#{bindings.FlightId.attributeValue}"
-                                            to="#{pageFlowScope.FlightIdPrm}"/>
-                    </af:commandButton>
-                  </af:toolbar>
-                </f:facet>
-                <f:facet name="statusbar"/>
-                <af:table value="#{bindings.FlightsVO.collectionModel}"
-                          var="row" rows="#{bindings.FlightsVO.rangeSize}"
-                          emptyText="#{bindings.FlightsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          fetchSize="#{bindings.FlightsVO.rangeSize}"
-                          rowBandingInterval="0"
-                          filterModel="#{bindings.FlightsVOCriteriaQuery.queryDescriptor}"
-                          queryListener="#{bindings.FlightsVOCriteriaQuery.processQuery}"
-                          filterVisible="true" varStatus="vs"
-                          selectedRowKeys="#{bindings.FlightsVO.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.FlightsVO.collectionModel.makeCurrent}"
-                          rowSelection="single" id="resId1">
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.Src.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.Src.label}"
-                             id="resId1c1">
-                    <af:outputText value="#{row.Src}" id="ot7"/>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.Dest.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.Dest.label}"
-                             id="resId1c2">
-                    <af:outputText value="#{row.Dest}" id="ot1"/>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureHour.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.DepartureHour.label}"
-                             id="resId1c3">
-                    <af:outputText value="#{row.DepartureHour}" id="ot5">
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.FlightsVO.hints.DepartureHour.format}"/>
-                    </af:outputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureDay.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.DepartureDay.label}"
-                             id="resId1c4">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{vs.filterCriteria.DepartureDay}"
-                                    id="id1"/>
-                    </f:facet>
-                    <af:outputText value="#{row.DepartureDay}" id="ot6">
-                      <af:convertDateTime pattern="#{bindings.FlightsVO.hints.DepartureDay.format}"/>
-                    </af:outputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.Duration.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.Duration.label}"
-                             id="resId1c5">
-                    <af:outputText value="#{row.Duration}" id="ot2">
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.FlightsVO.hints.Duration.format}"/>
-                    </af:outputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.NoOfSeats.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.NoOfSeats.label}"
-                             id="resId1c6">
-                    <af:outputText value="#{row.NoOfSeats}" id="ot3">
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.FlightsVO.hints.NoOfSeats.format}"/>
-                    </af:outputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.FlightsVO.hints.Price.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.FlightsVO.hints.Price.label}"
-                             id="resId1c7">
-                    <af:outputText value="#{row.Price}" id="ot4">
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.FlightsVO.hints.Price.format}"/>
-                    </af:outputText>
-                  </af:column>
-                </af:table>
-              </af:panelCollection>
+              <af:panelGroupLayout layout="vertical" id="pgl2">
+                <af:panelHeader text=" " id="ph1">
+                  <af:query id="qryId1"
+                            headerText="#{viewcontrollerBundle.CRITERII_DE_CAUTARE_ZBOR}"
+                            value="#{bindings.FlightsVOCriteriaQuery.queryDescriptor}"
+                            model="#{bindings.FlightsVOCriteriaQuery.queryModel}"
+                            queryListener="#{bindings.FlightsVOCriteriaQuery.processQuery}"
+                            queryOperationListener="#{bindings.FlightsVOCriteriaQuery.processQueryOperation}"
+                            resultComponentId="::pc1:resId1" disclosed="true"/>
+                </af:panelHeader>
+                <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar">
+                    <af:toolbar id="t1">
+                      <af:commandButton text="#{viewcontrollerBundle.REZERVA_BILET}" id="cb1"
+                                        action="goToReservation">
+                        <af:setActionListener to="#{pageFlowScope.FlightIdPrm}"
+                                              from="#{bindings.FlightId.attributeValue}"/>
+                      </af:commandButton>
+                    </af:toolbar>
+                  </f:facet>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.FlightsVO.collectionModel}"
+                            var="row" rows="#{bindings.FlightsVO.rangeSize}"
+                            emptyText="#{bindings.FlightsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.FlightsVO.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.FlightsVOCriteriaQuery.queryDescriptor}"
+                            queryListener="#{bindings.FlightsVOCriteriaQuery.processQuery}"
+                            filterVisible="true" varStatus="vs"
+                            selectedRowKeys="#{bindings.FlightsVO.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.FlightsVO.collectionModel.makeCurrent}"
+                            rowSelection="single" id="resId1">
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.FlightId.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.FlightId.label}"
+                               id="resId1c1">
+                      <af:outputText value="#{row.FlightId}" id="ot6">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsVO.hints.FlightId.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.Src.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.Src.label}"
+                               id="resId1c2">
+                      <af:outputText value="#{row.Src}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.Dest.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.Dest.label}"
+                               id="resId1c3">
+                      <af:outputText value="#{row.Dest}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureHour.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.DepartureHour.label}"
+                               id="resId1c4">
+                      <af:outputText value="#{row.DepartureHour}" id="ot7">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsVO.hints.DepartureHour.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureDay.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.DepartureDay.label}"
+                               id="resId1c5">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.DepartureDay}"
+                                      id="id1"/>
+                      </f:facet>
+                      <af:outputText value="#{row.DepartureDay}" id="ot4">
+                        <af:convertDateTime pattern="#{bindings.FlightsVO.hints.DepartureDay.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.Duration.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.Duration.label}"
+                               id="resId1c6">
+                      <af:outputText value="#{row.Duration}" id="ot15">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsVO.hints.Duration.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.NoOfSeats.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.NoOfSeats.label}"
+                               id="resId1c7">
+                      <af:outputText value="#{row.NoOfSeats}" id="ot2">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsVO.hints.NoOfSeats.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.FlightsVO.hints.Price.name}"
+                               filterable="true" sortable="true"
+                               headerText="#{bindings.FlightsVO.hints.Price.label}"
+                               id="resId1c8">
+                      <af:outputText value="#{row.Price}" id="ot5">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsVO.hints.Price.format}"/>
+                      </af:outputText>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelGroupLayout>
             </af:panelGroupLayout>
           </af:showDetailItem>
           <af:showDetailItem text="Cumpara bilete" id="sdi2">
-            <af:panelHeader text="Rezervarile dvs." id="ph2">
-              <f:facet name="context"/>
-              <f:facet name="menuBar"/>
+            <af:panelBox text="#{viewcontrollerBundle.REZERVARILE_DVS}" id="pb1"
+                         showDisclosure="false">
               <f:facet name="toolbar"/>
-              <f:facet name="legend"/>
-              <f:facet name="info"/>
               <af:panelCollection id="pc2" styleClass="AFStretchWidth">
                 <f:facet name="menus"/>
                 <f:facet name="toolbar">
@@ -138,8 +147,8 @@
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.ReservationId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.ReservationId.label}"
-                             id="c4">
-                    <af:outputText value="#{row.ReservationId}" id="ot8">
+                             id="c6">
+                    <af:outputText value="#{row.ReservationId}" id="ot12">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.ReservationsVO.hints.ReservationId.format}"/>
                     </af:outputText>
@@ -147,20 +156,20 @@
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.Src.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.Src.label}"
-                             id="c1">
-                    <af:outputText value="#{row.Src}" id="ot12"/>
+                             id="c7">
+                    <af:outputText value="#{row.Src}" id="ot10"/>
                   </af:column>
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.Dest.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.Dest.label}"
                              id="c5">
-                    <af:outputText value="#{row.Dest}" id="ot9"/>
+                    <af:outputText value="#{row.Dest}" id="ot13"/>
                   </af:column>
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.DepartureHour.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.DepartureHour.label}"
                              id="c3">
-                    <af:outputText value="#{row.DepartureHour}" id="ot14">
+                    <af:outputText value="#{row.DepartureHour}" id="ot8">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.ReservationsVO.hints.DepartureHour.format}"/>
                     </af:outputText>
@@ -168,7 +177,7 @@
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.DepartureDay.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.DepartureDay.label}"
-                             id="c7">
+                             id="c4">
                     <f:facet name="filter">
                       <af:inputDate value="#{vs.filterCriteria.DepartureDay}"
                                     id="id2"/>
@@ -180,8 +189,8 @@
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.Duration.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.Duration.label}"
-                             id="c2">
-                    <af:outputText value="#{row.Duration}" id="ot10">
+                             id="c1">
+                    <af:outputText value="#{row.Duration}" id="ot14">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.ReservationsVO.hints.Duration.format}"/>
                     </af:outputText>
@@ -189,15 +198,15 @@
                   <af:column sortProperty="#{bindings.ReservationsVO.hints.Price.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.ReservationsVO.hints.Price.label}"
-                             id="c6">
-                    <af:outputText value="#{row.Price}" id="ot13">
+                             id="c2">
+                    <af:outputText value="#{row.Price}" id="ot9">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.ReservationsVO.hints.Price.format}"/>
                     </af:outputText>
                   </af:column>
                 </af:table>
               </af:panelCollection>
-            </af:panelHeader>
+            </af:panelBox>
           </af:showDetailItem>
           <af:showDetailItem text="Despre noi" id="sdi3"/>
           <af:showDetailItem text="Contact" id="sdi4"/>

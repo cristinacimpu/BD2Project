@@ -8,5 +8,5 @@ import oracle.jbo.ApplicationModule;
 public interface BD2ProjectAppModule extends ApplicationModule {
     String doLoginDB(String userName, String password);
 
-    String doReservationDB(String clientId, String flightId);
+    String doReservationDB(String userName, String flightId);
 }

@@ -26,7 +26,7 @@
     Type="java.lang.String"/>
   <SQLQuery>
     <![CDATA[select flight_id, src, dest, departure_hour, departure_day, duration, no_of_seats, price from flights
-where flight_id =: flight_id_prm]]>
+where flight_id = :flight_id_prm]]>
   </SQLQuery>
   <ViewAttribute
     Name="FlightId"
@@ -100,7 +100,7 @@ where flight_id =: flight_id_prm]]>
     ColumnType="DATE"
     AliasName="DEPARTURE_DAY"
     Expression="DEPARTURE_DAY"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>

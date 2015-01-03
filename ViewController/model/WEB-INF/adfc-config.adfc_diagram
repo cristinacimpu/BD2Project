@@ -16,9 +16,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">113.396484</property>
+         name="y">109.99414</property>
       <property
-         name="x">153.5</property>
+         name="x">60.5</property>
    </View>
    <View
       id="View3">
@@ -31,19 +31,19 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">113.29297</property>
+         name="y">109.94238</property>
       <property
-         name="x">363.5</property>
+         name="x">390.5</property>
    </View>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase4"
       from="View2"
-      to="View3">
+      to="MethodCall15">
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">R50,258.5,113.0459,258.5,112.94238,L50</property>
+         name="sdm:polyPoints">R50,131.92578,109.643555,131.92578,108.09766,L50</property>
    </ControlFlowCase>
    <View
       id="View7">
@@ -68,7 +68,7 @@
       <property
          name="fromOutcome">goToReservation</property>
       <property
-         name="sdm:polyPoints">R50,482.42578,112.94238,482.42578,111.99414,L50</property>
+         name="sdm:polyPoints">R50,495.92578,109.5918,495.92578,111.99414,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -78,7 +78,7 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">T44,360.85547,228.83887,360.0,228.83887,B44</property>
+         name="sdm:polyPoints">T44,360.85547,227.16357,387.0,227.16357,B44</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall10">
@@ -134,6 +134,29 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">T56,367.85547,228.83887,367.0,228.83887,B56</property>
+         name="sdm:polyPoints">T56,367.85547,234.16357,394.0,234.16357,B56</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall15">
+      <property
+         name="activityId">EWPViewReservations</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>EWPViewReservations&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">108.44824</property>
+      <property
+         name="x">203.35156</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="MethodCall15"
+      to="View3">
+      <property
+         name="fromOutcome">ExecuteWithParams</property>
+      <property
+         name="sdm:polyPoints">R50,296.92578,108.09766,296.92578,109.5918,L50</property>
    </ControlFlowCase>
 </SDM>

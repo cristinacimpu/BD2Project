@@ -21,13 +21,6 @@
     </SchemaBasedProperties>
   </Properties>
   <ViewUsage
-    Name="FlightsVO"
-    ViewObjectName="bd2.project.model.view.FlightsVO">
-    <ViewCriteriaUsage
-      Name="FlightsVOCriteria"
-      FullName="bd2.project.model.view.FlightsVO.FlightsVOCriteria"/>
-  </ViewUsage>
-  <ViewUsage
     Name="ClientsVO"
     ViewObjectName="bd2.project.model.view.ClientsVO"/>
   <ViewUsage
@@ -36,6 +29,9 @@
   <ViewUsage
     Name="ReservationsVO"
     ViewObjectName="bd2.project.model.view.ReservationsVO"/>
+  <ViewUsage
+    Name="FlightsVO"
+    ViewObjectName="bd2.project.model.view.FlightsVO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="bd2.project.model.ModelBundle"/>
@@ -57,7 +53,7 @@
       <Return
         Type="java.lang.String"/>
       <Parameter
-        Name="clientId"
+        Name="userName"
         Type="java.lang.String"/>
       <Parameter
         Name="flightId"

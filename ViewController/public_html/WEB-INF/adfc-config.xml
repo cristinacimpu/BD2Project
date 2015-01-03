@@ -21,11 +21,17 @@
       <fixed-outcome>ExecuteWithParams</fixed-outcome>
     </outcome>
   </method-call>
+  <method-call id="EWPViewReservations">
+    <method>#{bindings.ExecuteWithParams.execute}</method>
+    <outcome id="__47">
+      <fixed-outcome>ExecuteWithParams</fixed-outcome>
+    </outcome>
+  </method-call>
   <control-flow-rule id="__9">
     <from-activity-id id="__10">Login</from-activity-id>
     <control-flow-case id="__12">
       <from-outcome id="__13">ok</from-outcome>
-      <to-activity-id id="__11">MainPage</to-activity-id>
+      <to-activity-id id="__11">EWPViewReservations</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__23">
@@ -58,6 +64,13 @@
     <control-flow-case id="__42">
       <from-outcome id="__44">ExecuteWithParams</from-outcome>
       <to-activity-id id="__43">ReservationDetails</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__48">
+    <from-activity-id id="__49">EWPViewReservations</from-activity-id>
+    <control-flow-case id="__51">
+      <from-outcome id="__52">ExecuteWithParams</from-outcome>
+      <to-activity-id id="__50">MainPage</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__2">

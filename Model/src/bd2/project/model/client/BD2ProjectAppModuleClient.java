@@ -23,9 +23,9 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
         return (String)_ret;
     }
 
-    public String doReservationDB(String clientId, String flightId) {
+    public String doReservationDB(String userName, String flightId) {
         Object _ret =
-            this.riInvokeExportedMethod(this,"doReservationDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {clientId, flightId});
+            this.riInvokeExportedMethod(this,"doReservationDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {userName, flightId});
         return (String)_ret;
     }
 }

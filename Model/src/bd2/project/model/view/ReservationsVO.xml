@@ -20,13 +20,13 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="client_id_prm"
+    Name="username_prm"
     Kind="where"
     Type="java.lang.String"/>
   <SQLQuery>
     <![CDATA[select a.reservation_id, b.src, b.dest, b.departure_hour, b.departure_day, b.duration, b.price
 from reservations a, flights b
-where a.flight_id = b.flight_id and a.client_id = :client_id_prm]]>
+where a.flight_id = b.flight_id and a.username = :username_prm]]>
   </SQLQuery>
   <ViewAttribute
     Name="ReservationId"

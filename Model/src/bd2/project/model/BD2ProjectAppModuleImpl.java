@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 import oracle.jbo.server.ApplicationModuleImpl;
 
+
 import oracle.jbo.server.ViewObjectImpl;
 
 import oracle.jdbc.internal.OracleTypes;
@@ -52,7 +53,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
         }
     }
 
-    public String doReservationDB(String clientId, String flightId) {
+    public String doReservationDB(String userName, String flightId) {
         CallableStatement st = null;
         String rezult = null;
         Integer rez;
@@ -66,7 +67,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
                                             0);
             st.registerOutParameter(3,
                                     OracleTypes.CHAR);
-            st.setString(1, clientId);
+            st.setString(1, userName);
             st.setString(2, flightId);
             st.execute();
             rezult = st.getString(3);
@@ -80,13 +81,6 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
         }
     }
 
-    /**
-     * Container's getter for FlightsVO.
-     * @return FlightsVO
-     */
-    public ViewObjectImpl getFlightsVO() {
-        return (ViewObjectImpl)findViewObject("FlightsVO");
-    }
 
     /**
      * Container's getter for ClientsVO.
@@ -110,5 +104,13 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
      */
     public ViewObjectImpl getReservationsVO() {
         return (ViewObjectImpl)findViewObject("ReservationsVO");
+    }
+
+    /**
+     * Container's getter for FlightsVO.
+     * @return FlightsVO
+     */
+    public ViewObjectImpl getFlightsVO() {
+        return (ViewObjectImpl)findViewObject("FlightsVO");
     }
 }
