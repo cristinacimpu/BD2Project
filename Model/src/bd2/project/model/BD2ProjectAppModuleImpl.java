@@ -108,6 +108,106 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
+    
+    public String createNewAccountDB(String cnp_prm, String firstname_prm,
+                                     String lastname_prm, String address_prm,
+                                     String phone_prm, String email_prm,
+                                     String username_prm, String passwd_prm) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+        getDBTransaction().createCallableStatement("begin" + " new_client(:1, :2, :3, :4, :5, :6, :7, :8, :9); end;",
+                                            0);
+            st.registerOutParameter(9,
+                                    OracleTypes.CHAR);
+            st.setString(1, cnp_prm);
+            st.setString(2, firstname_prm);
+            st.setString(3, lastname_prm);
+            st.setString(4, address_prm);
+            st.setString(5, phone_prm);
+            st.setString(6, email_prm);
+            st.setString(7, username_prm);
+            st.setString(8, passwd_prm);
+            st.execute();
+            rezult = st.getString(9);
+            
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public String newFlightDB(String src_prm, String dest_prm,
+                                     String departHour_prm, String departDay_prm,
+                                     String duration_prm, String noSeats_prm,
+                                     String price_prm) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+        getDBTransaction().createCallableStatement("begin" + " new_flight(:1, :2, :3, :4, :5, :6, :7, :8); end;",
+                                            0);
+            st.registerOutParameter(8,
+                                    OracleTypes.CHAR);
+            st.setString(1, src_prm);
+            st.setString(2, dest_prm);
+            st.setString(3, departHour_prm);
+            st.setString(4, departDay_prm);
+            st.setString(5, duration_prm);
+            st.setString(6, noSeats_prm);
+            st.setString(7, price_prm);
+            st.execute();
+            rezult = st.getString(8);
+            
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+    
+    public String cancelFlightDB(String flightId) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+    getDBTransaction().createCallableStatement("begin" + " cancel_flight(:1, :2); end;",
+                                            0);
+            st.registerOutParameter(2,
+                                    OracleTypes.CHAR);
+            st.setString(1, flightId);
+            st.execute();
+            rezult = st.getString(2);
+            
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
     /**

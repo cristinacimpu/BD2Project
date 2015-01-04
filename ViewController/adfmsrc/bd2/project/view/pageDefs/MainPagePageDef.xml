@@ -77,5 +77,13 @@
       <NamedData NDName="username_prm" NDValue="#{pageFlowScope.user_prm}"
                  NDType="java.lang.String"/>
     </action>
+    <methodAction id="cancelFlightDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="cancelFlightDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.cancelFlightDB_BD2ProjectAppModuleDataControl_dataProvider_cancelFlightDB_result">
+      <NamedData NDName="flightId" NDType="java.lang.String"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

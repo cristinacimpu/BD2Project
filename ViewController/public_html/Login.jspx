@@ -17,7 +17,7 @@
                   <af:group id="g1">
                     <af:commandButton text="Conectare" id="cb1"
                                       action="#{login.doLogin}"/>
-                    <af:commandLink text="Cont nou" id="cl1"/>
+                    <af:commandLink text="Cont nou" id="cl1" action="new"/>
                   </af:group>
                 </f:facet>
                 <af:inputText label="Utilizator" id="j_username"

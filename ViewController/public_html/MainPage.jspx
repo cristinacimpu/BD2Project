@@ -36,7 +36,19 @@
                     <f:facet name="toolbar">
                       <af:toolbar id="t1">
                         <af:commandButton text="#{viewcontrollerBundle.REZERVA_BILET}"
-                                          id="cb1" action="goToReservation">
+                                          id="cb1" action="goToReservation"
+                                          rendered="#{pageFlowScope.user_prm != 'admin'}">
+                          <af:setActionListener to="#{pageFlowScope.FlightIdPrm}"
+                                                from="#{bindings.FlightId.attributeValue}"/>
+                        </af:commandButton>
+                        <af:spacer width="10" height="10" id="s3"/>
+                        <af:commandButton text="#{viewcontrollerBundle.ADAUGA_ZBOR}" id="cb5"
+                                          rendered="#{pageFlowScope.user_prm == 'admin'}"
+                                          action="newFlight"/>
+                        <af:spacer width="10" height="10" id="spacer6"/>
+                        <af:commandButton text="#{viewcontrollerBundle.ANULEAZA_ZBOR}" id="cb6"
+                                          rendered="#{pageFlowScope.user_prm == 'admin'}"
+                                          actionListener="#{backingBeanScope.mainPage_bean.cancelFlight}">
                           <af:setActionListener to="#{pageFlowScope.FlightIdPrm}"
                                                 from="#{bindings.FlightId.attributeValue}"/>
                         </af:commandButton>
@@ -128,7 +140,8 @@
                 </af:panelGroupLayout>
               </af:panelGroupLayout>
             </af:showDetailItem>
-            <af:showDetailItem text="Cumpara bilete" id="sdi2">
+            <af:showDetailItem text="Cumpara bilete" id="sdi2"
+                               rendered="#{pageFlowScope.user_prm != 'admin'}">
               <af:panelBox text="#{viewcontrollerBundle.REZERVARILE_DVS}"
                            id="pb1" showDisclosure="false">
                 <f:facet name="toolbar"/>
@@ -234,7 +247,8 @@
                 </af:panelCollection>
               </af:panelBox>
             </af:showDetailItem>
-            <af:showDetailItem text="Despre noi" id="sdi3">
+            <af:showDetailItem text="Despre noi" id="sdi3"
+                               rendered="#{pageFlowScope.user_prm != 'admin'}">
               <af:panelBox text="#{viewcontrollerBundle.TRAVELINNO}" id="pb3"
                            showDisclosure="false">
                 <f:facet name="toolbar"/>
@@ -255,7 +269,8 @@ pas pentru a construi cu rabdare si devotament aceasta agentie de turism prezent
                 </af:panelGroupLayout>
               </af:panelBox>
             </af:showDetailItem>
-            <af:showDetailItem text="Contact" id="sdi4">
+            <af:showDetailItem text="Contact" id="sdi4"
+                               rendered="#{pageFlowScope.user_prm != 'admin'}">
               <af:panelGroupLayout id="pgl4" layout="vertical">
                 <af:outputText value="Tel: (+4)021 20 09 639" id="ot21"/>
                 <af:spacer width="10" height="10" id="s2"/>

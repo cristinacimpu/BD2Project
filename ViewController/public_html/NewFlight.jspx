@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['bd2.project.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelHeader text="#{viewcontrollerBundle.ADAUGARE_ZBOR}" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar">
+            <af:toolbar id="t1">
+              <af:commandButton text="#{viewcontrollerBundle.ADAUGA_ZBOR}" id="cb1"
+                                action="#{backingBeanScope.new_flight.addNewFlight}"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:commandButton text="#{viewcontrollerBundle.INAPOI}" id="cb2"
+                                action="ok"/>
+            </af:toolbar>
+          </f:facet>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="pfl1">
+            <f:facet name="footer"/>
+            <af:inputText label="#{viewcontrollerBundle.PLECARE}" id="it1"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.src}"/>
+            <af:inputText label="#{viewcontrollerBundle.SOSIRE}" id="it2"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.dest}"/>
+            <af:inputText label="#{viewcontrollerBundle.ORA_PLECARII}" id="it3"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.departHour}"/>
+            <af:inputText label="#{viewcontrollerBundle.DATA_PLECARII}" id="it4"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.departDay}"/>
+            <af:inputText label="#{viewcontrollerBundle.DURATA_ZBOR}" id="it5"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.duration}"/>
+            <af:inputText label="#{viewcontrollerBundle.NR_LOCURI}" id="it6"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.noSeats}"/>
+            <af:inputText label="#{viewcontrollerBundle.PRET}"
+                          id="it7" showRequired="true"
+                          binding="#{backingBeanScope.new_flight.price}"/>
+          </af:panelFormLayout>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="NewAccountPageDef"
+                Package="bd2.project.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="createNewAccountDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="createNewAccountDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.createNewAccountDB_BD2ProjectAppModuleDataControl_dataProvider_createNewAccountDB_result">
+      <NamedData NDName="cnp_prm" NDType="java.lang.String"/>
+      <NamedData NDName="firstname_prm" NDType="java.lang.String"/>
+      <NamedData NDName="lastname_prm" NDType="java.lang.String"/>
+      <NamedData NDName="address_prm" NDType="java.lang.String"/>
+      <NamedData NDName="phone_prm" NDType="java.lang.String"/>
+      <NamedData NDName="email_prm" NDType="java.lang.String"/>
+      <NamedData NDName="username_prm" NDType="java.lang.String"/>
+      <NamedData NDName="passwd_prm" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

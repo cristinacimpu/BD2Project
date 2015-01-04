@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="NewFlightPageDef"
+                Package="bd2.project.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="newFlightDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="newFlightDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.newFlightDB_BD2ProjectAppModuleDataControl_dataProvider_newFlightDB_result">
+      <NamedData NDName="src_prm" NDType="java.lang.String"/>
+      <NamedData NDName="dest_prm" NDType="java.lang.String"/>
+      <NamedData NDName="departHour_prm" NDType="java.lang.String"/>
+      <NamedData NDName="departDay_prm" NDType="java.lang.String"/>
+      <NamedData NDName="duration_prm" NDType="java.lang.String"/>
+      <NamedData NDName="noSeats_prm" NDType="java.lang.String"/>
+      <NamedData NDName="price_prm" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

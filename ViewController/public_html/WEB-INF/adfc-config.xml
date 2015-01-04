@@ -27,11 +27,21 @@
       <fixed-outcome>ExecuteWithParams</fixed-outcome>
     </outcome>
   </method-call>
+  <view id="NewAccount">
+    <page>/NewAccount.jspx</page>
+  </view>
+  <view id="NewFlight">
+    <page>/NewFlight.jspx</page>
+  </view>
   <control-flow-rule id="__9">
     <from-activity-id id="__10">Login</from-activity-id>
     <control-flow-case id="__12">
       <from-outcome id="__13">ok</from-outcome>
       <to-activity-id id="__11">EWPViewReservations</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__56">
+      <from-outcome id="__58">new</from-outcome>
+      <to-activity-id id="__57">NewAccount</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__23">
@@ -43,6 +53,10 @@
     <control-flow-case id="__53">
       <from-outcome id="__55">logout</from-outcome>
       <to-activity-id id="__54">Login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__73">
+      <from-outcome id="__74">newFlight</from-outcome>
+      <to-activity-id id="__72">NewFlight</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__28">
@@ -77,6 +91,20 @@
       <to-activity-id id="__50">MainPage</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__63">
+    <from-activity-id id="__64">NewAccount</from-activity-id>
+    <control-flow-case id="__65">
+      <from-outcome id="__67">ok</from-outcome>
+      <to-activity-id id="__66">Login</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__75">
+    <from-activity-id id="__76">NewFlight</from-activity-id>
+    <control-flow-case id="__78">
+      <from-outcome id="__79">ok</from-outcome>
+      <to-activity-id id="__77">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__2">
     <managed-bean-name id="__4">login_old</managed-bean-name>
     <managed-bean-class id="__1">bd2.project.view.backing.HomePageBean</managed-bean-class>
@@ -96,5 +124,15 @@
     <managed-bean-name id="__19">reservationDetails_bean</managed-bean-name>
     <managed-bean-class id="__18">bd2.project.view.backing.ReservationDetailsPageBean</managed-bean-class>
     <managed-bean-scope id="__21">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__62">
+    <managed-bean-name id="__60">new_account</managed-bean-name>
+    <managed-bean-class id="__61">bd2.project.view.backing.NewAccountPageBean</managed-bean-class>
+    <managed-bean-scope id="__59">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__70">
+    <managed-bean-name id="__69">new_flight</managed-bean-name>
+    <managed-bean-class id="__71">bd2.project.view.backing.NewFlightPageBean</managed-bean-class>
+    <managed-bean-scope id="__68">backingBean</managed-bean-scope>
   </managed-bean>
 </adfc-config>

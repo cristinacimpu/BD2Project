@@ -11,4 +11,15 @@ public interface BD2ProjectAppModule extends ApplicationModule {
     String doReservationDB(String userName, String flightId);
 
     String buyTicketDB(String reservation_id, String card_no);
+
+    String createNewAccountDB(String cnp_prm, String firstname_prm,
+                              String lastname_prm, String address_prm,
+                              String phone_prm, String email_prm,
+                              String username_prm, String passwd_prm);
+
+    String newFlightDB(String src_prm, String dest_prm, String departHour_prm,
+                       String departDay_prm, String duration_prm,
+                       String noSeats_prm, String price_prm);
+
+    String cancelFlightDB(String flightId);
 }

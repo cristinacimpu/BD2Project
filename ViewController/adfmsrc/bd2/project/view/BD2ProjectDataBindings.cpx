@@ -20,6 +20,8 @@
           usageId="bd2_project_view_adfc_config___ExecuteWithParams1PageDef"/>
     <page path="PageFlow#EWPViewReservations"
           usageId="bd2_project_view_adfc_config___ExecuteWithParamsPageDef1"/>
+    <page path="/NewAccount.jspx" usageId="bd2_project_view_NewAccountPageDef"/>
+    <page path="/NewFlight.jspx" usageId="bd2_project_view_NewFlightPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="bd2_project_view_TestPagePageDef"
@@ -37,6 +39,10 @@
           path="bd2.project.view.pageDefs.adfc_config___ExecuteWithParams1PageDef"/>
     <page id="bd2_project_view_adfc_config___ExecuteWithParamsPageDef1"
           path="bd2.project.view.pageDefs.adfc_config___ExecuteWithParamsPageDef1"/>
+    <page id="bd2_project_view_NewAccountPageDef"
+          path="bd2.project.view.pageDefs.NewAccountPageDef"/>
+    <page id="bd2_project_view_NewFlightPageDef"
+          path="bd2.project.view.pageDefs.NewFlightPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BD2ProjectAppModuleDataControl"

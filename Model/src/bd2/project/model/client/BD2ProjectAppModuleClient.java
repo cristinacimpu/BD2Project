@@ -34,4 +34,28 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
             this.riInvokeExportedMethod(this,"buyTicketDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {reservation_id, card_no});
         return (String)_ret;
     }
+
+    public String createNewAccountDB(String cnp_prm, String firstname_prm,
+                                     String lastname_prm, String address_prm,
+                                     String phone_prm, String email_prm,
+                                     String username_prm, String passwd_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"createNewAccountDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {cnp_prm, firstname_prm, lastname_prm, address_prm, phone_prm, email_prm, username_prm, passwd_prm});
+        return (String)_ret;
+    }
+
+    public String newFlightDB(String src_prm, String dest_prm,
+                              String departHour_prm, String departDay_prm,
+                              String duration_prm, String noSeats_prm,
+                              String price_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"newFlightDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {src_prm, dest_prm, departHour_prm, departDay_prm, duration_prm, noSeats_prm, price_prm});
+        return (String)_ret;
+    }
+
+    public String cancelFlightDB(String flightId) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"cancelFlightDB",new String [] {"java.lang.String"},new Object[] {flightId});
+        return (String)_ret;
+    }
 }

@@ -25,7 +25,7 @@
     Kind="where"
     Type="java.lang.String"/>
   <SQLQuery>
-    <![CDATA[select client_id, cnp, firstname, lastname, address, phone_no, email, username from clients
+    <![CDATA[select client_id, cnp, firstname, lastname, address, phone_no, email, username, passwd from clients
 where username = :username_prm]]>
   </SQLQuery>
   <ViewAttribute
@@ -149,6 +149,21 @@ where username = :username_prm]]>
     SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Passwd"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="55"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PASSWD"
+    Expression="PASSWD"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="55"/>
     </DesignTime>
   </ViewAttribute>
   <ResourceBundle>

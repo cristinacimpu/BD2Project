@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['bd2.project.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f2">
+        <af:panelHeader text="#{viewcontrollerBundle.INREGISTRARE}" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar">
+            <af:toolbar id="t1">
+              <af:commandButton text="#{viewcontrollerBundle.CREEAZA_CONT}" id="cb1"
+                                action="#{backingBeanScope.new_account.createNewAccount}"/>
+            </af:toolbar>
+          </f:facet>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="pfl1">
+            <f:facet name="footer"/>
+            <af:inputText label="#{viewcontrollerBundle.CNP}" id="it1"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.cnp}"/>
+            <af:inputText label="#{viewcontrollerBundle.PRENUME}" id="it2"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.firstname}"/>
+            <af:inputText label="#{viewcontrollerBundle.NUME}" id="it3"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.lastname}"/>
+            <af:inputText label="#{viewcontrollerBundle.ADRESA}" id="it4"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.address}"/>
+            <af:inputText label="#{viewcontrollerBundle.TELEFON}" id="it5"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.phone}"/>
+            <af:inputText label="#{viewcontrollerBundle.EMAIL}" id="it6"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.email}"/>
+            <af:inputText label="#{viewcontrollerBundle.NUME_UTILIZATOR}" id="it7"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_account.username}"/>
+            <af:inputText label="#{viewcontrollerBundle.PAROLA}" id="it8"
+                          secret="true" showRequired="true"
+                          binding="#{backingBeanScope.new_account.password}"/>
+            <af:inputText label="#{viewcontrollerBundle.CONFIRMARE_PAROLA}"
+                          id="inputText1" secret="true" showRequired="true"
+                          binding="#{backingBeanScope.new_account.confirmation}"/>
+          </af:panelFormLayout>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

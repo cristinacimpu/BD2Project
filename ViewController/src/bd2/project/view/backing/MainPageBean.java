@@ -7,6 +7,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 
@@ -17,35 +18,38 @@ import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
 import oracle.jbo.Row;
+import oracle.jbo.ViewCriteria;
+import oracle.jbo.server.ViewObjectImpl;
 
 public class MainPageBean {
-    
+
     private RichInputText card_no;
-    
+
     public MainPageBean() {
         super();
     }
-    
+
     public String doReservation() {
-        
+
         System.out.println(ADFContext.getCurrent().getPageFlowScope().get("user_prm").toString());
-        
-        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+
+        BindingContainer bindings =
+            BindingContext.getCurrent().getCurrentBindingsEntry();
         DCIteratorBinding configSettings =
-                    (DCIteratorBinding)bindings.get("FlightsVOIterator");
+            (DCIteratorBinding)bindings.get("FlightsVOIterator");
         Row[] allconfigRows = configSettings.getAllRowsInRange();
-        
+
         System.out.println(">>> iterator length = " + allconfigRows.length);
         return "ok";
     }
-    
+
     public void buyTicket(ActionEvent actionEvent) {
         //System.out.println("Am cumparat.");
-        
+
         FacesContext fctx;
         fctx = FacesContext.getCurrentInstance();
         String card_noStr = null;
-        
+
         if (card_no.getValue() != null) {
             card_noStr = card_no.getValue().toString();
             System.out.println(card_noStr);
@@ -54,27 +58,30 @@ public class MainPageBean {
                 new FacesMessage(FacesMessage.SEVERITY_ERROR, "Introduceti numarul de card.",
                                  "");
             fctx.addMessage("card_no", msg);
-            
+
             return;
         }
-        
-        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+
+        BindingContainer bindings =
+            BindingContext.getCurrent().getCurrentBindingsEntry();
         OperationBinding ob = bindings.getOperationBinding("buyTicketDB");
         Map params = ob.getParamsMap();
-        params.put("reservation_id", ADFContext.getCurrent().getPageFlowScope().get("ReservationIdPrm").toString() );
+        params.put("reservation_id",
+                   ADFContext.getCurrent().getPageFlowScope().get("ReservationIdPrm").toString());
         params.put("card_no", card_noStr);
         ob.execute();
-        
+
         String result = ob.getResult().toString();
         if (result.startsWith("D")) {
             FacesMessage fm = new FacesMessage();
             fm.setDetail("Va multumim ca ati ales sa folositi serviciile noastre!");
             fm.setSeverity(FacesMessage.SEVERITY_INFO);
             FacesContext.getCurrentInstance().addMessage(null, fm);
-            
-            OperationBinding ob1 = bindings.getOperationBinding("ExecuteWithParams");
+
+            OperationBinding ob1 =
+                bindings.getOperationBinding("ExecuteWithParams");
             ob1.execute();
-            
+
         } else if (result.equals("N")) {
             FacesMessage msg =
                 new FacesMessage(FacesMessage.SEVERITY_ERROR, "S-a produs o eroare.",
@@ -82,9 +89,32 @@ public class MainPageBean {
             fctx.addMessage(null, msg);
             return;
         }
-        
+
         card_no.setValue("");
     }
+
+    public void cancelFlight(ActionEvent actionEvent) {
+        BindingContainer bindings =
+            BindingContext.getCurrent().getCurrentBindingsEntry();
+        OperationBinding ob = bindings.getOperationBinding("cancelFlightDB");
+        Map params = ob.getParamsMap();
+        params.put("flightId",
+                   ADFContext.getCurrent().getPageFlowScope().get("FlightIdPrm").toString());
+        ob.execute();
+    }
+
+//    public void executeVC() {
+//        
+//        BindingContext bindingContext = BindingContext.getCurrent();
+//        DCDataControl dc  = bindingContext.findDataControl("");
+//        AppModule appM = (AppModuleImpl)dc.getDataProvider();
+//                                                                                 
+//        ViewObjectImpl vo = getFli;
+//        ViewCriteria vc = vo.getViewCriteria("findEmployeeVC");
+//        vo.applyViewCriteria(vc);
+//        vo.setNamedWhereClauseParam("pEmployeeId", employeeId);
+//        vo.executeQuery();
+//    }
 
     public void setCard_no(RichInputText card_no) {
         this.card_no = card_no;
