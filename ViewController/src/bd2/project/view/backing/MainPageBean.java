@@ -11,7 +11,10 @@ import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.adf.share.ADFContext;
 
+import oracle.adf.view.rich.component.rich.data.RichTable;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
+
+import oracle.adf.view.rich.context.AdfFacesContext;
 
 import oracle.binding.BindingContainer;
 
@@ -24,6 +27,7 @@ import oracle.jbo.server.ViewObjectImpl;
 public class MainPageBean {
 
     private RichInputText card_no;
+    private RichTable t1;
 
     public MainPageBean() {
         super();
@@ -101,20 +105,14 @@ public class MainPageBean {
         params.put("flightId",
                    ADFContext.getCurrent().getPageFlowScope().get("FlightIdPrm").toString());
         ob.execute();
+        
+        //resetare tabel
+        DCIteratorBinding iterBind =
+            (DCIteratorBinding)bindings.get("FlightsVOIterator");
+        iterBind.executeQuery();
+        
+        AdfFacesContext.getCurrentInstance().addPartialTarget(t1);
     }
-
-//    public void executeVC() {
-//        
-//        BindingContext bindingContext = BindingContext.getCurrent();
-//        DCDataControl dc  = bindingContext.findDataControl("");
-//        AppModule appM = (AppModuleImpl)dc.getDataProvider();
-//                                                                                 
-//        ViewObjectImpl vo = getFli;
-//        ViewCriteria vc = vo.getViewCriteria("findEmployeeVC");
-//        vo.applyViewCriteria(vc);
-//        vo.setNamedWhereClauseParam("pEmployeeId", employeeId);
-//        vo.executeQuery();
-//    }
 
     public void setCard_no(RichInputText card_no) {
         this.card_no = card_no;
@@ -122,5 +120,13 @@ public class MainPageBean {
 
     public RichInputText getCard_no() {
         return card_no;
+    }
+
+    public void setT1(RichTable t1) {
+        this.t1 = t1;
+    }
+
+    public RichTable getT1() {
+        return t1;
     }
 }

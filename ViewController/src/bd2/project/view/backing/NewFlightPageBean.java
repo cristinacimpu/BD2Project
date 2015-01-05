@@ -7,6 +7,7 @@ import javax.faces.context.FacesContext;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.view.rich.component.rich.input.RichInputText;
+import oracle.adf.view.rich.component.rich.input.RichInputDate;
 
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
@@ -16,7 +17,7 @@ public class NewFlightPageBean {
     private RichInputText src;
     private RichInputText dest;
     private RichInputText departHour;
-    private RichInputText departDay;
+    private RichInputDate departDay;
     private RichInputText duration;
     private RichInputText noSeats;
     private RichInputText price;
@@ -49,11 +50,11 @@ public class NewFlightPageBean {
         return departHour;
     }
 
-    public void setDepartDay(RichInputText departDay) {
+    public void setDepartDay(RichInputDate departDay) {
         this.departDay = departDay;
     }
 
-    public RichInputText getDepartDay() {
+    public RichInputDate getDepartDay() {
         return departDay;
     }
 
@@ -106,6 +107,7 @@ public class NewFlightPageBean {
         params.put("dest_prm", dest.getValue().toString());
         params.put("departHour_prm", departHour.getValue().toString());
         params.put("departDay_prm", departDay.getValue().toString());
+        System.out.println("data introdusa = " + departDay.getValue().toString());
         params.put("duration_prm", duration.getValue().toString());
         params.put("noSeats_prm", noSeats.getValue().toString());
         params.put("price_prm", price.getValue().toString());

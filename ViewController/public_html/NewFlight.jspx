@@ -35,9 +35,12 @@
             <af:inputText label="#{viewcontrollerBundle.ORA_PLECARII}" id="it3"
                           showRequired="true"
                           binding="#{backingBeanScope.new_flight.departHour}"/>
-            <af:inputText label="#{viewcontrollerBundle.DATA_PLECARII}" id="it4"
+            <af:inputDate label="#{viewcontrollerBundle.DATA_PLECARII}" id="id1"
                           showRequired="true"
-                          binding="#{backingBeanScope.new_flight.departDay}"/>
+                          binding="#{backingBeanScope.new_flight.departDay}"
+                          converter="oracle.adf.rich.DateTime">
+              <af:convertDateTime timeZone="dd-MM-yyyy"/>
+            </af:inputDate>
             <af:inputText label="#{viewcontrollerBundle.DURATA_ZBOR}" id="it5"
                           showRequired="true"
                           binding="#{backingBeanScope.new_flight.duration}"/>

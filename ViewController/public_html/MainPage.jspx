@@ -65,7 +65,8 @@
                               filterVisible="true" varStatus="vs"
                               selectedRowKeys="#{bindings.FlightsVO.collectionModel.selectedRow}"
                               selectionListener="#{bindings.FlightsVO.collectionModel.makeCurrent}"
-                              rowSelection="single" id="resId1">
+                              rowSelection="single" id="resId1"
+                              binding="#{backingBeanScope.mainPage_bean.t1}">
                       <af:column sortProperty="#{bindings.FlightsVO.hints.FlightId.name}"
                                  filterable="true" sortable="true"
                                  headerText="#{bindings.FlightsVO.hints.FlightId.label}"
