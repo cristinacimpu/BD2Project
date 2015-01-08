@@ -1,5 +1,7 @@
 package bd2.project.view.backing;
 
+import java.text.SimpleDateFormat;
+
 import java.util.Map;
 
 import javax.faces.application.FacesMessage;
@@ -97,6 +99,9 @@ public class NewFlightPageBean {
 
             return null;
         }
+        
+        SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("dd-MM-yyyy");
+        String date = DATE_FORMAT.format(departDay.getValue());
 
         BindingContainer bindings =
             BindingContext.getCurrent().getCurrentBindingsEntry();
@@ -106,13 +111,12 @@ public class NewFlightPageBean {
         params.put("src_prm", src.getValue().toString());
         params.put("dest_prm", dest.getValue().toString());
         params.put("departHour_prm", departHour.getValue().toString());
-        params.put("departDay_prm", departDay.getValue().toString());
-        System.out.println("data introdusa = " + departDay.getValue().toString());
+        params.put("departDay_prm", date);
         params.put("duration_prm", duration.getValue().toString());
         params.put("noSeats_prm", noSeats.getValue().toString());
         params.put("price_prm", price.getValue().toString());
         ob.execute();
-        
+
         return "ok";
     }
 }

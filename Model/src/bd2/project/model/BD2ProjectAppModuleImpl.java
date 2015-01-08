@@ -167,6 +167,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             st.setString(2, dest_prm);
             st.setString(3, departHour_prm);
             st.setString(4, departDay_prm);
+            st.setString(4, departDay_prm);
             st.setString(5, duration_prm);
             st.setString(6, noSeats_prm);
             st.setString(7, price_prm);

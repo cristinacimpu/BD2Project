@@ -39,7 +39,7 @@
                           showRequired="true"
                           binding="#{backingBeanScope.new_flight.departDay}"
                           converter="oracle.adf.rich.DateTime">
-              <af:convertDateTime timeZone="dd-MM-yyyy"/>
+              <af:convertDateTime pattern="dd-MM-yyyy"/>
             </af:inputDate>
             <af:inputText label="#{viewcontrollerBundle.DURATA_ZBOR}" id="it5"
                           showRequired="true"
