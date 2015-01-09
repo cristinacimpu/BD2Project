@@ -20,10 +20,6 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="depart_day_prm"
-    Kind="viewcriteria"
-    Type="oracle.jbo.domain.Date"/>
-  <Variable
     Name="src_prm"
     Kind="viewcriteria"
     Type="java.lang.String"/>
@@ -31,6 +27,10 @@
     Name="dest_prm"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <Variable
+    Name="depart_day_prm"
+    Kind="viewcriteria"
+    Type="oracle.jbo.domain.Date"/>
   <SQLQuery>
     <![CDATA[select flight_id, src, dest, departure_hour, departure_day, duration, no_of_seats, price from flights]]>
   </SQLQuery>
@@ -209,6 +209,14 @@
         Conjunction="AND"
         Value=":dest_prm"
         GenerateIsNullClauseForBindVars="false"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="FlightsVOCriteria_vcrow1_DepartureDay"
+        ViewAttribute="DepartureDay"
+        Operator="="
+        Conjunction="AND"
+        Value=":depart_day_prm"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

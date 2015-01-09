@@ -11,15 +11,15 @@
     <iterator Binds="FlightsVO" RangeSize="25"
               DataControl="BD2ProjectAppModuleDataControl"
               id="FlightsVOIterator"/>
-    <searchRegion Criteria="FlightsVOCriteria"
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="FlightsVOIterator" id="FlightsVOCriteriaQuery"/>
     <iterator Binds="ReservationsVO" RangeSize="25"
               DataControl="BD2ProjectAppModuleDataControl"
               id="ReservationsVOIterator"/>
     <searchRegion Binds="ReservationsVOIterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="ReservationsVOQuery"/>
+    <searchRegion Criteria="FlightsVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="FlightsVOIterator" id="FlightsVOCriteriaQuery1"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="FlightsVOIterator" id="FlightId">
@@ -27,21 +27,6 @@
         <Item Value="FlightId"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="FlightsVOIterator" id="FlightsVO">
-      <nodeDefinition DefName="bd2.project.model.view.FlightsVO"
-                      Name="FlightsVO0">
-        <AttrNames>
-          <Item Value="FlightId"/>
-          <Item Value="Src"/>
-          <Item Value="Dest"/>
-          <Item Value="DepartureHour"/>
-          <Item Value="DepartureDay"/>
-          <Item Value="Duration"/>
-          <Item Value="NoOfSeats"/>
-          <Item Value="Price"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <tree IterBinding="ReservationsVOIterator" id="ReservationsVO">
       <nodeDefinition DefName="bd2.project.model.view.ReservationsVO"
                       Name="ReservationsVO0">
@@ -85,5 +70,19 @@
                   ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.cancelFlightDB_BD2ProjectAppModuleDataControl_dataProvider_cancelFlightDB_result">
       <NamedData NDName="flightId" NDType="java.lang.String"/>
     </methodAction>
+    <tree IterBinding="FlightsVOIterator" id="FlightsVO1">
+      <nodeDefinition DefName="bd2.project.model.view.FlightsVO"
+                      Name="FlightsVO10">
+        <AttrNames>
+          <Item Value="Src"/>
+          <Item Value="Dest"/>
+          <Item Value="DepartureHour"/>
+          <Item Value="DepartureDay"/>
+          <Item Value="Duration"/>
+          <Item Value="NoOfSeats"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

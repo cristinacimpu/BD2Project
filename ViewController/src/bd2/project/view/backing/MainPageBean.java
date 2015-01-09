@@ -1,10 +1,15 @@
 package bd2.project.view.backing;
 
+import java.io.IOException;
+
 import java.util.Map;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+
+import javax.servlet.http.HttpServletRequest;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCDataControl;
@@ -42,8 +47,11 @@ public class MainPageBean {
         DCIteratorBinding configSettings =
             (DCIteratorBinding)bindings.get("FlightsVOIterator");
         Row[] allconfigRows = configSettings.getAllRowsInRange();
-
         System.out.println(">>> iterator length = " + allconfigRows.length);
+        
+        ViewObjectImpl vo = (ViewObjectImpl)configSettings.getViewObject();
+        System.out.println(vo.getNamedWhereClauseParam("depart_day_prm").toString());
+        
         return "ok";
     }
 
@@ -113,6 +121,21 @@ public class MainPageBean {
         
         AdfFacesContext.getCurrentInstance().addPartialTarget(t1);
     }
+    
+    public String logout() {
+
+//        FacesContext ctx = FacesContext.getCurrentInstance();
+//        ExternalContext ectx = ctx.getExternalContext();
+//        String logoutUrl = "faces/Login.jspx";
+//        ((HttpServletRequest)ectx.getRequest()).getSession().invalidate();
+//        try {
+//            ectx.redirect(logoutUrl);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        return null;
+    }
+
 
     public void setCard_no(RichInputText card_no) {
         this.card_no = card_no;

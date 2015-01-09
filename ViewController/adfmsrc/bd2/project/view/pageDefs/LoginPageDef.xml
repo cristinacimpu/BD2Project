@@ -13,7 +13,7 @@
                   RequiresUpdateModel="true" Action="invokeMethod"
                   MethodName="doLoginDB" IsViewObjectMethod="false"
                   ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.doLoginDB_BD2ProjectAppModuleDataControl_dataProvider_doLoginDB_result">
-      <NamedData NDName="userName" NDType="java.lang.String"/>
+      <NamedData NDName="userName" NDValue="" NDType="java.lang.String"/>
       <NamedData NDName="password" NDType="java.lang.String"/>
     </methodAction>
   </bindings>

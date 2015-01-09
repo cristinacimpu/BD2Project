@@ -10,7 +10,7 @@
   <pageMap>
     <page path="/TestPage.jspx" usageId="bd2_project_view_TestPagePageDef"/>
     <page path="/pages/home.jsff" usageId="bd2_project_view_homePageDef"/>
-    <page path="/Login.jspx" usageId="bd2_project_view_LoginPageDef"/>
+   
     <page path="/MainPage.jspx" usageId="bd2_project_view_MainPagePageDef"/>
     <page path="/ReservationDetails.jspx"
           usageId="bd2_project_view_ReservationDetailsPageDef"/>
@@ -22,13 +22,13 @@
           usageId="bd2_project_view_adfc_config___ExecuteWithParamsPageDef1"/>
     <page path="/NewAccount.jspx" usageId="bd2_project_view_NewAccountPageDef"/>
     <page path="/NewFlight.jspx" usageId="bd2_project_view_NewFlightPageDef"/>
+    <page path="/Login.jspx" usageId="bd2_project_view_LoginPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="bd2_project_view_TestPagePageDef"
           path="bd2.project.view.pageDefs.TestPagePageDef"/>
     <page id="bd2_project_view_homePageDef" path="pages.homePageDef"/>
-    <page id="bd2_project_view_LoginPageDef"
-          path="bd2.project.view.pageDefs.LoginPageDef"/>
+  
     <page id="bd2_project_view_MainPagePageDef"
           path="bd2.project.view.pageDefs.MainPagePageDef"/>
     <page id="bd2_project_view_ReservationDetailsPageDef"
@@ -43,6 +43,8 @@
           path="bd2.project.view.pageDefs.NewAccountPageDef"/>
     <page id="bd2_project_view_NewFlightPageDef"
           path="bd2.project.view.pageDefs.NewFlightPageDef"/>
+    <page id="bd2_project_view_LoginPageDef"
+          path="bd2.project.view.pageDefs.LoginPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BD2ProjectAppModuleDataControl"

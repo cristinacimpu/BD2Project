@@ -78,7 +78,7 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">T44,390.85547,215.81299,390.5,215.81299,B50</property>
+         name="sdm:polyPoints">T44,390.85547,215.81299,387.0,215.81299,B44</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall10">
@@ -134,7 +134,7 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">T56,397.85547,215.81299,397.5,215.81299,B61</property>
+         name="sdm:polyPoints">T56,397.85547,215.81299,394.0,215.81299,B56</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall15">
@@ -159,16 +159,6 @@
       <property
          name="sdm:polyPoints">R50,296.92578,108.09766,296.92578,109.5918,L50</property>
    </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase17"
-      from="View3"
-      to="View2">
-      <property
-         name="fromOutcome">logout</property>
-      <property
-         name="sdm:polyPoints">B39,383.5,163.64355,67.5,163.64355,B61</property>
-   </ControlFlowCase>
    <View
       id="View18">
       <property
@@ -192,7 +182,7 @@
       <property
          name="fromOutcome">new</property>
       <property
-         name="sdm:polyPoints">B39,53.5,211.79297,53.182617,211.79297,T44</property>
+         name="sdm:polyPoints">B44,57.0,211.79297,53.182617,211.79297,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -202,7 +192,7 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">T56,60.182617,211.79297,60.5,211.79297,B50</property>
+         name="sdm:polyPoints">T56,60.182617,211.79297,64.0,211.79297,B56</property>
    </ControlFlowCase>
    <View
       id="View21">
