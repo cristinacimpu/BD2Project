@@ -68,7 +68,7 @@
       <property
          name="fromOutcome">goToReservation</property>
       <property
-         name="sdm:polyPoints">R50,495.92578,109.5918,495.92578,111.99414,L50</property>
+         name="sdm:polyPoints">R58,525.4258,116.5918,525.4258,116.29297,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -78,7 +78,7 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">T44,390.85547,215.81299,387.0,215.81299,B44</property>
+         name="sdm:polyPoints">T44,390.85547,215.81299,390.5,215.81299,B50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall10">
@@ -89,9 +89,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">112.34473</property>
+         name="y">116.643555</property>
       <property
-         name="x">601.35156</property>
+         name="x">660.35156</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -101,7 +101,7 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">B50,601.35156,217.54004,602.6885,217.54004,T50</property>
+         name="sdm:polyPoints">B50,660.35156,219.68945,602.6885,219.68945,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall12">
@@ -134,7 +134,7 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">T56,397.85547,215.81299,394.0,215.81299,B56</property>
+         name="sdm:polyPoints">T56,397.85547,215.81299,397.5,215.81299,B61</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall15">
@@ -182,7 +182,7 @@
       <property
          name="fromOutcome">new</property>
       <property
-         name="sdm:polyPoints">B44,57.0,211.79297,53.182617,211.79297,T44</property>
+         name="sdm:polyPoints">B39,53.5,211.79297,53.182617,211.79297,T44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -192,7 +192,7 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">T56,60.182617,211.79297,64.0,211.79297,B56</property>
+         name="sdm:polyPoints">T56,60.182617,211.79297,60.5,211.79297,B50</property>
    </ControlFlowCase>
    <View
       id="View21">
@@ -228,5 +228,50 @@
          name="fromOutcome">ok</property>
       <property
          name="sdm:polyPoints">B56,394.0,25.318848,394.0,25.318848,T56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase24"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">logout</property>
+      <property
+         name="sdm:polyPoints">B39,383.5,163.64355,67.5,163.64355,B61</property>
+   </ControlFlowCase>
+   <View
+      id="View25">
+      <property
+         name="activityId">NewPilot</property>
+      <property
+         name="page">/NewPilot.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NewPilot&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-55.902344</property>
+      <property
+         name="x">540.5</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase26"
+      from="View3"
+      to="View25">
+      <property
+         name="fromOutcome">newPilot</property>
+      <property
+         name="sdm:polyPoints">R42,537.0,102.5918,B44</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase27"
+      from="View25"
+      to="View3">
+      <property
+         name="fromOutcome">ok</property>
+      <property
+         name="sdm:polyPoints">B56,544.0,109.5918,R50</property>
    </ControlFlowCase>
 </SDM>

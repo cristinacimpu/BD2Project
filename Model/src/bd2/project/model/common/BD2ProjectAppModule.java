@@ -22,4 +22,11 @@ public interface BD2ProjectAppModule extends ApplicationModule {
                        String noSeats_prm, String price_prm);
 
     String cancelFlightDB(String flightId);
+
+    void doQueryResultReset();
+
+    String addPilotDB(String cnp_prm, String firstname_prm,
+                      String lastname_prm, String address_prm,
+                      String phone_prm, String sal_prm, String rank_prm,
+                      String hiredate_prm, String comm_prm);
 }

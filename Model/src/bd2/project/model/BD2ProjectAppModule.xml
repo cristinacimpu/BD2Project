@@ -31,7 +31,23 @@
     ViewObjectName="bd2.project.model.view.ReservationsVO"/>
   <ViewUsage
     Name="FlightsVO"
-    ViewObjectName="bd2.project.model.view.FlightsVO"/>
+    ViewObjectName="bd2.project.model.view.FlightsVO">
+    <ViewCriteriaUsage
+      Name="FlightsVOCriteria"
+      FullName="bd2.project.model.view.FlightsVO.FlightsVOCriteria"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="PilotsVO"
+    ViewObjectName="bd2.project.model.view.PilotsVO"/>
+  <ViewUsage
+    Name="AirplanesVO"
+    ViewObjectName="bd2.project.model.view.AirplanesVO"/>
+  <ViewUsage
+    Name="TicketsReportByDateVO"
+    ViewObjectName="bd2.project.model.view.TicketsReportByDateVO"/>
+  <ViewUsage
+    Name="SalReportByRankVO"
+    ViewObjectName="bd2.project.model.view.SalReportByRankVO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="bd2.project.model.ModelBundle"/>
@@ -131,6 +147,43 @@
         Type="java.lang.String"/>
       <Parameter
         Name="flightId"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="doQueryResultReset">
+      <Return
+        Type="void"/>
+    </Method>
+    <Method
+      Name="addPilotDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="cnp_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="firstname_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="lastname_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="address_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="phone_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="sal_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="rank_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="hiredate_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="comm_prm"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>

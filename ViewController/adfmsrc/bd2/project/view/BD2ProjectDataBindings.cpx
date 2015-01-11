@@ -23,6 +23,7 @@
     <page path="/NewAccount.jspx" usageId="bd2_project_view_NewAccountPageDef"/>
     <page path="/NewFlight.jspx" usageId="bd2_project_view_NewFlightPageDef"/>
     <page path="/Login.jspx" usageId="bd2_project_view_LoginPageDef"/>
+    <page path="/NewPilot.jspx" usageId="bd2_project_view_NewPilotPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="bd2_project_view_TestPagePageDef"
@@ -45,6 +46,8 @@
           path="bd2.project.view.pageDefs.NewFlightPageDef"/>
     <page id="bd2_project_view_LoginPageDef"
           path="bd2.project.view.pageDefs.LoginPageDef"/>
+    <page id="bd2_project_view_NewPilotPageDef"
+          path="bd2.project.view.pageDefs.NewPilotPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BD2ProjectAppModuleDataControl"

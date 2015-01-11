@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import oracle.jbo.ViewCriteria;
 import oracle.jbo.server.ApplicationModuleImpl;
 
 
@@ -25,6 +26,14 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
      */
     public BD2ProjectAppModuleImpl() {
 
+    }
+
+    public void doQueryResultReset() {
+        ViewCriteria vc =
+            this.getFlightsVO().getViewCriteria("FlightsVOCriteria");
+        this.getFlightsVO().removeViewCriteria("FlightsVOCriteria");
+        this.getFlightsVO().executeEmptyRowSet();
+        this.getFlightsVO().applyViewCriteria(vc);
     }
 
     public String doLoginDB(String userName, String password) {
@@ -65,13 +74,12 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             st =
  getDBTransaction().createCallableStatement("begin" + " doreservation(:1, :2, :3); end;",
                                             0);
-            st.registerOutParameter(3,
-                                    OracleTypes.CHAR);
+            st.registerOutParameter(3, OracleTypes.CHAR);
             st.setString(1, userName);
             st.setString(2, flightId);
             st.execute();
             rezult = st.getString(3);
-            
+
             st.close();
             ps.close();
             return rezult.trim();
@@ -80,7 +88,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
-    
+
     public String buyTicketDB(String reservation_id, String card_no) {
         CallableStatement st = null;
         String rezult = null;
@@ -91,15 +99,14 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
-        getDBTransaction().createCallableStatement("begin" + " buy_ticket(:1, :2, :3); end;",
+ getDBTransaction().createCallableStatement("begin" + " buy_ticket(:1, :2, :3); end;",
                                             0);
-            st.registerOutParameter(3,
-                                    OracleTypes.CHAR);
+            st.registerOutParameter(3, OracleTypes.CHAR);
             st.setString(1, reservation_id);
             st.setString(2, card_no);
             st.execute();
             rezult = st.getString(3);
-            
+
             st.close();
             ps.close();
             return rezult.trim();
@@ -108,7 +115,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
-    
+
     public String createNewAccountDB(String cnp_prm, String firstname_prm,
                                      String lastname_prm, String address_prm,
                                      String phone_prm, String email_prm,
@@ -122,10 +129,9 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
-        getDBTransaction().createCallableStatement("begin" + " new_client(:1, :2, :3, :4, :5, :6, :7, :8, :9); end;",
+ getDBTransaction().createCallableStatement("begin" + " new_client(:1, :2, :3, :4, :5, :6, :7, :8, :9); end;",
                                             0);
-            st.registerOutParameter(9,
-                                    OracleTypes.CHAR);
+            st.registerOutParameter(9, OracleTypes.CHAR);
             st.setString(1, cnp_prm);
             st.setString(2, firstname_prm);
             st.setString(3, lastname_prm);
@@ -136,7 +142,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             st.setString(8, passwd_prm);
             st.execute();
             rezult = st.getString(9);
-            
+
             st.close();
             ps.close();
             return rezult.trim();
@@ -145,11 +151,11 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
-    
+
     public String newFlightDB(String src_prm, String dest_prm,
-                                     String departHour_prm, String departDay_prm,
-                                     String duration_prm, String noSeats_prm,
-                                     String price_prm) {
+                              String departHour_prm, String departDay_prm,
+                              String duration_prm, String noSeats_prm,
+                              String price_prm) {
         CallableStatement st = null;
         String rezult = null;
         Integer rez;
@@ -159,21 +165,19 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
-        getDBTransaction().createCallableStatement("begin" + " new_flight(:1, :2, :3, :4, :5, :6, :7, :8); end;",
+ getDBTransaction().createCallableStatement("begin" + " new_flight(:1, :2, :3, :4, :5, :6, :7, :8); end;",
                                             0);
-            st.registerOutParameter(8,
-                                    OracleTypes.CHAR);
+            st.registerOutParameter(8, OracleTypes.CHAR);
             st.setString(1, src_prm);
             st.setString(2, dest_prm);
             st.setString(3, departHour_prm);
-            st.setString(4, departDay_prm);
             st.setString(4, departDay_prm);
             st.setString(5, duration_prm);
             st.setString(6, noSeats_prm);
             st.setString(7, price_prm);
             st.execute();
             rezult = st.getString(8);
-            
+
             st.close();
             ps.close();
             return rezult.trim();
@@ -182,7 +186,44 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             return null;
         }
     }
-    
+
+    public String addPilotDB(String cnp_prm, String firstname_prm,
+                             String lastname_prm, String address_prm,
+                             String phone_prm, String sal_prm, String rank_prm,
+                             String hiredate_prm, String comm_prm) {
+        CallableStatement st = null;
+        String rezult = null;
+        Integer rez;
+        Connection conn;
+        PreparedStatement ps;
+        try {
+            ps = getDBTransaction().createPreparedStatement("commit", 1);
+            conn = ps.getConnection();
+            st =
+ getDBTransaction().createCallableStatement("begin" + " new_pilot(:1, :2, :3, :4, :5, :6, :7, :8, :9, :10); end;",
+                                            0);
+            st.registerOutParameter(10, OracleTypes.CHAR);
+            st.setString(1, cnp_prm);
+            st.setString(2, firstname_prm);
+            st.setString(3, lastname_prm);
+            st.setString(4, address_prm);
+            st.setString(5, phone_prm);
+            st.setString(6, sal_prm);
+            st.setString(7, rank_prm);
+            st.setString(8, hiredate_prm);
+            st.setString(9, comm_prm);
+            st.execute();
+            rezult = st.getString(10);
+
+            st.close();
+            ps.close();
+            return rezult.trim();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public String cancelFlightDB(String flightId) {
         CallableStatement st = null;
         String rezult = null;
@@ -193,14 +234,13 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
-    getDBTransaction().createCallableStatement("begin" + " cancel_flight(:1, :2); end;",
+ getDBTransaction().createCallableStatement("begin" + " cancel_flight(:1, :2); end;",
                                             0);
-            st.registerOutParameter(2,
-                                    OracleTypes.CHAR);
+            st.registerOutParameter(2, OracleTypes.CHAR);
             st.setString(1, flightId);
             st.execute();
             rezult = st.getString(2);
-            
+
             st.close();
             ps.close();
             return rezult.trim();
@@ -241,5 +281,37 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
      */
     public ViewObjectImpl getFlightsVO() {
         return (ViewObjectImpl)findViewObject("FlightsVO");
+    }
+
+    /**
+     * Container's getter for PilotsVO.
+     * @return PilotsVO
+     */
+    public ViewObjectImpl getPilotsVO() {
+        return (ViewObjectImpl)findViewObject("PilotsVO");
+    }
+
+    /**
+     * Container's getter for AirplanesVO.
+     * @return AirplanesVO
+     */
+    public ViewObjectImpl getAirplanesVO() {
+        return (ViewObjectImpl)findViewObject("AirplanesVO");
+    }
+
+    /**
+     * Container's getter for TicketsReportByDateVO.
+     * @return TicketsReportByDateVO
+     */
+    public ViewObjectImpl getTicketsReportByDateVO() {
+        return (ViewObjectImpl)findViewObject("TicketsReportByDateVO");
+    }
+
+    /**
+     * Container's getter for SalReportByRankVO.
+     * @return SalReportByRankVO
+     */
+    public ViewObjectImpl getSalReportByRankVO() {
+        return (ViewObjectImpl)findViewObject("SalReportByRankVO");
     }
 }

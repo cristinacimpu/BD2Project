@@ -33,6 +33,9 @@
   <view id="NewFlight">
     <page>/NewFlight.jspx</page>
   </view>
+  <view id="NewPilot">
+    <page>/NewPilot.jspx</page>
+  </view>
   <control-flow-rule id="__9">
     <from-activity-id id="__10">Login</from-activity-id>
     <control-flow-case id="__12">
@@ -53,6 +56,14 @@
     <control-flow-case id="__73">
       <from-outcome id="__74">newFlight</from-outcome>
       <to-activity-id id="__72">NewFlight</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__53">
+      <from-outcome id="__55">logout</from-outcome>
+      <to-activity-id id="__54">Login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__84">
+      <from-outcome id="__86">newPilot</from-outcome>
+      <to-activity-id id="__85">NewPilot</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__28">
@@ -101,6 +112,13 @@
       <to-activity-id id="__77">MainPage</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__87">
+    <from-activity-id id="__88">NewPilot</from-activity-id>
+    <control-flow-case id="__90">
+      <from-outcome id="__91">ok</from-outcome>
+      <to-activity-id id="__89">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__2">
     <managed-bean-name id="__4">login_old</managed-bean-name>
     <managed-bean-class id="__1">bd2.project.view.backing.HomePageBean</managed-bean-class>
@@ -130,5 +148,10 @@
     <managed-bean-name id="__69">new_flight</managed-bean-name>
     <managed-bean-class id="__71">bd2.project.view.backing.NewFlightPageBean</managed-bean-class>
     <managed-bean-scope id="__68">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__82">
+    <managed-bean-name id="__83">new_pilot</managed-bean-name>
+    <managed-bean-class id="__81">bd2.project.view.backing.NewPilotPageBean</managed-bean-class>
+    <managed-bean-scope id="__80">backingBean</managed-bean-scope>
   </managed-bean>
 </adfc-config>

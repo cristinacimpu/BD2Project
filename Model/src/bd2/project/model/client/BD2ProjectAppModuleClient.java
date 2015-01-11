@@ -58,4 +58,19 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
             this.riInvokeExportedMethod(this,"cancelFlightDB",new String [] {"java.lang.String"},new Object[] {flightId});
         return (String)_ret;
     }
+
+    public void doQueryResultReset() {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"doQueryResultReset",null,null);
+        return;
+    }
+
+    public String addPilotDB(String cnp_prm, String firstname_prm,
+                             String lastname_prm, String address_prm,
+                             String phone_prm, String sal_prm, String rank_prm,
+                             String hiredate_prm, String comm_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"addPilotDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {cnp_prm, firstname_prm, lastname_prm, address_prm, phone_prm, sal_prm, rank_prm, hiredate_prm, comm_prm});
+        return (String)_ret;
+    }
 }

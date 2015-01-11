@@ -166,6 +166,9 @@ where username = :username_prm]]>
       <Attr Name="_DisplaySize" Value="55"/>
     </DesignTime>
   </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="Username"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="bd2.project.model.ModelBundle"/>

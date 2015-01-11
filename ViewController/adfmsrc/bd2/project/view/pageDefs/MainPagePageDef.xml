@@ -19,7 +19,25 @@
                   id="ReservationsVOQuery"/>
     <searchRegion Criteria="FlightsVOCriteria"
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="FlightsVOIterator" id="FlightsVOCriteriaQuery1"/>
+                  Binds="FlightsVOIterator" id="FlightsVOCriteriaQuery"/>
+    <iterator Binds="PilotsVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="PilotsVOIterator"/>
+    <searchRegion Binds="PilotsVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PilotsVOQuery"/>
+    <iterator Binds="AirplanesVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="AirplanesVOIterator"/>
+    <searchRegion Binds="AirplanesVOIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AirplanesVOQuery"/>
+    <iterator Binds="TicketsReportByDateVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="TicketsReportByDateVOIterator"/>
+    <iterator Binds="SalReportByRankVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="SalReportByRankVOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="FlightsVOIterator" id="FlightId">
@@ -70,7 +88,7 @@
                   ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.cancelFlightDB_BD2ProjectAppModuleDataControl_dataProvider_cancelFlightDB_result">
       <NamedData NDName="flightId" NDType="java.lang.String"/>
     </methodAction>
-    <tree IterBinding="FlightsVOIterator" id="FlightsVO1">
+    <tree IterBinding="FlightsVOIterator" id="FlightsVO">
       <nodeDefinition DefName="bd2.project.model.view.FlightsVO"
                       Name="FlightsVO10">
         <AttrNames>
@@ -84,5 +102,80 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <methodAction id="doQueryResultReset"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="doQueryResultReset" IsViewObjectMethod="false"/>
+    <tree IterBinding="PilotsVOIterator" id="PilotsVO">
+      <nodeDefinition DefName="bd2.project.model.view.PilotsVO"
+                      Name="PilotsVO0">
+        <AttrNames>
+          <Item Value="Cnp"/>
+          <Item Value="Firstname"/>
+          <Item Value="Lastname"/>
+          <Item Value="Address"/>
+          <Item Value="PhoneNo"/>
+          <Item Value="Salary"/>
+          <Item Value="Rank"/>
+          <Item Value="Hiredate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AirplanesVOIterator" id="AirplanesVO">
+      <nodeDefinition DefName="bd2.project.model.view.AirplanesVO"
+                      Name="AirplanesVO0">
+        <AttrNames>
+          <Item Value="AirplaneId"/>
+          <Item Value="AirplaneName"/>
+          <Item Value="AirplaneCode"/>
+          <Item Value="NoOfSeats"/>
+          <Item Value="AirplaneLength"/>
+          <Item Value="AirplaneHeight"/>
+          <Item Value="AirplaneWeight"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TicketsReportByDateVOIterator" id="EWPTickets"
+            InstanceName="BD2ProjectAppModuleDataControl.TicketsReportByDateVO"
+            DataControl="BD2ProjectAppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="date_prm" NDType="java.lang.String"/>
+    </action>
+    <tree IterBinding="TicketsReportByDateVOIterator"
+          id="TicketsReportByDateVO">
+      <nodeDefinition DefName="bd2.project.model.view.TicketsReportByDateVO"
+                      Name="TicketsReportByDateVO0">
+        <AttrNames>
+          <Item Value="Src"/>
+          <Item Value="Dest"/>
+          <Item Value="DepartureDay"/>
+          <Item Value="Firstname"/>
+          <Item Value="Lastname"/>
+          <Item Value="PurchaseDay"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SalReportByRankVOIterator" id="SalReportByRankVO">
+      <nodeDefinition DefName="bd2.project.model.view.SalReportByRankVO"
+                      Name="SalReportByRankVO0">
+        <AttrNames>
+          <Item Value="Cnp"/>
+          <Item Value="Firstname"/>
+          <Item Value="Lastname"/>
+          <Item Value="Address"/>
+          <Item Value="PhoneNo"/>
+          <Item Value="Rank"/>
+          <Item Value="Venit"/>
+          <Item Value="Impozit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SalReportByRankVOIterator" id="EWPSalary"
+            InstanceName="BD2ProjectAppModuleDataControl.SalReportByRankVO"
+            DataControl="BD2ProjectAppModuleDataControl"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="rank_prm" NDType="java.lang.String"/>
+    </action>
   </bindings>
 </pageDefinition>

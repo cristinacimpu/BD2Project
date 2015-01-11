@@ -130,6 +130,10 @@ where a.flight_id = b.flight_id and a.username = :username_prm]]>
     </DesignTime>
     <Properties>
       <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="bd2.project.model.view.ReservationsVO.DepartureDay_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="bd2.project.model.view.ReservationsVO.DepartureDay_FMT_FORMAT"/>
         <LABEL
           ResId="DATA_PLECARE"/>
       </SchemaBasedProperties>
