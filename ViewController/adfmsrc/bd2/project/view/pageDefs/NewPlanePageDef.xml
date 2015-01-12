@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="NewPlanePageDef"
+                Package="bd2.project.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+  </executables>
+  <bindings>
+    <methodAction id="newPlaneDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="newPlaneDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.newPlaneDB_BD2ProjectAppModuleDataControl_dataProvider_newPlaneDB_result">
+      <NamedData NDName="airplane_name_prm" NDType="java.lang.String"/>
+      <NamedData NDName="airplane_code_prm" NDType="java.lang.String"/>
+      <NamedData NDName="seats_prm" NDType="java.lang.String"/>
+      <NamedData NDName="airplane_length_prm" NDType="java.lang.String"/>
+      <NamedData NDName="airplane_height_prm" NDType="java.lang.String"/>
+      <NamedData NDName="airplane_weight_prm" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

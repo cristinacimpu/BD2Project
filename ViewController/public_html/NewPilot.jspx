@@ -13,8 +13,14 @@
         <af:panelHeader text="#{viewcontrollerBundle.ADAUGARE_PILOT}" id="ph1">
           <f:facet name="context"/>
           <f:facet name="menuBar">
-            <af:commandButton text="#{viewcontrollerBundle.ADAUGA_PILOT}" id="cb1"
-                              action="#{backingBeanScope.new_pilot.addNewPilot}"/>
+            <af:group id="g1">
+              <af:commandButton text="#{viewcontrollerBundle.ADAUGA_PILOT}"
+                                id="cb1"
+                                action="#{backingBeanScope.new_pilot.addNewPilot}"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:commandButton text="#{viewcontrollerBundle.INAPOI}" id="cb2"
+                                action="back"/>
+            </af:group>
           </f:facet>
           <f:facet name="toolbar"/>
           <f:facet name="legend"/>
@@ -22,28 +28,37 @@
           <af:panelFormLayout id="pfl1">
             <f:facet name="footer"/>
             <af:inputText label="#{viewcontrollerBundle.CNP}" id="it1"
-                          binding="#{backingBeanScope.new_pilot.cnp}"/>
+                          binding="#{backingBeanScope.new_pilot.cnp}"
+                          showRequired="true"/>
             <af:inputText label="#{viewcontrollerBundle.PRENUME}" id="it2"
-                          binding="#{backingBeanScope.new_pilot.firstname}"/>
+                          binding="#{backingBeanScope.new_pilot.firstname}"
+                          showRequired="true"/>
             <af:inputText label="#{viewcontrollerBundle.NUME}" id="it3"
-                          binding="#{backingBeanScope.new_pilot.lastname}"/>
+                          binding="#{backingBeanScope.new_pilot.lastname}"
+                          showRequired="true"/>
             <af:inputText label="#{viewcontrollerBundle.ADRESA}" id="it4"
-                          binding="#{backingBeanScope.new_pilot.address}"/>
+                          binding="#{backingBeanScope.new_pilot.address}"
+                          showRequired="true"/>
             <af:inputText label="#{viewcontrollerBundle.TELEFON}" id="it5"
-                          binding="#{backingBeanScope.new_pilot.phone}"/>
+                          binding="#{backingBeanScope.new_pilot.phone}"
+                          showRequired="true"/>
             <af:inputText label="#{viewcontrollerBundle.SALARIU}" id="it6"
-                          binding="#{backingBeanScope.new_pilot.sal}"/>
+                          binding="#{backingBeanScope.new_pilot.sal}"
+                          showRequired="true"/>
             <af:selectOneChoice label="Functie" id="soc1"
-                                binding="#{backingBeanScope.new_pilot.rank}">
+                                binding="#{backingBeanScope.new_pilot.rank}"
+                                showRequired="true">
               <af:selectItem label="Pilot" id="si2" value="P"/>
               <af:selectItem label="Copilot" id="si1" value="C"/>
             </af:selectOneChoice>
             <af:inputDate label="#{viewcontrollerBundle.DATA_ANGAJARE}" id="id1"
-                          binding="#{backingBeanScope.new_pilot.hiredate}">
+                          binding="#{backingBeanScope.new_pilot.hiredate}"
+                          showRequired="true">
               <af:convertDateTime pattern="dd-MM-yyyy"/>
             </af:inputDate>
             <af:inputText label="#{viewcontrollerBundle.COMISION}" id="it8"
-                          binding="#{backingBeanScope.new_pilot.comm}"/>
+                          binding="#{backingBeanScope.new_pilot.comm}"
+                          showRequired="true"/>
           </af:panelFormLayout>
         </af:panelHeader>
       </af:form>

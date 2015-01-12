@@ -24,6 +24,11 @@
     <page path="/NewFlight.jspx" usageId="bd2_project_view_NewFlightPageDef"/>
     <page path="/Login.jspx" usageId="bd2_project_view_LoginPageDef"/>
     <page path="/NewPilot.jspx" usageId="bd2_project_view_NewPilotPageDef"/>
+    <page path="PageFlow#Execute"
+          usageId="bd2_project_view_adfc_config___ExecutePageDef"/>
+    <page path="/NewPlane.jspx" usageId="bd2_project_view_NewPlanePageDef"/>
+    <page path="PageFlow#Execute1"
+          usageId="bd2_project_view_adfc_config___Execute1PageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="bd2_project_view_TestPagePageDef"
@@ -48,6 +53,12 @@
           path="bd2.project.view.pageDefs.LoginPageDef"/>
     <page id="bd2_project_view_NewPilotPageDef"
           path="bd2.project.view.pageDefs.NewPilotPageDef"/>
+    <page id="bd2_project_view_adfc_config___ExecutePageDef"
+          path="bd2.project.view.pageDefs.adfc_config___ExecutePageDef"/>
+    <page id="bd2_project_view_NewPlanePageDef"
+          path="bd2.project.view.pageDefs.NewPlanePageDef"/>
+    <page id="bd2_project_view_adfc_config___Execute1PageDef"
+          path="bd2.project.view.pageDefs.adfc_config___Execute1PageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BD2ProjectAppModuleDataControl"

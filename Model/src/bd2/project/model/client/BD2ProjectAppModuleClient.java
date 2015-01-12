@@ -17,6 +17,16 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
     }
 
 
+    public String newFlightDB(String src_prm, String dest_prm,
+                              String departHour_prm, String departDay_prm,
+                              String duration_prm, String noSeats_prm,
+                              String price_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"newFlightDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {src_prm, dest_prm, departHour_prm, departDay_prm, duration_prm, noSeats_prm, price_prm});
+        return (String)_ret;
+    }
+
+
     public String doLoginDB(String userName, String password) {
         Object _ret =
             this.riInvokeExportedMethod(this,"doLoginDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {userName, password});
@@ -44,15 +54,6 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
         return (String)_ret;
     }
 
-    public String newFlightDB(String src_prm, String dest_prm,
-                              String departHour_prm, String departDay_prm,
-                              String duration_prm, String noSeats_prm,
-                              String price_prm) {
-        Object _ret =
-            this.riInvokeExportedMethod(this,"newFlightDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {src_prm, dest_prm, departHour_prm, departDay_prm, duration_prm, noSeats_prm, price_prm});
-        return (String)_ret;
-    }
-
     public String cancelFlightDB(String flightId) {
         Object _ret =
             this.riInvokeExportedMethod(this,"cancelFlightDB",new String [] {"java.lang.String"},new Object[] {flightId});
@@ -71,6 +72,31 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
                              String hiredate_prm, String comm_prm) {
         Object _ret =
             this.riInvokeExportedMethod(this,"addPilotDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {cnp_prm, firstname_prm, lastname_prm, address_prm, phone_prm, sal_prm, rank_prm, hiredate_prm, comm_prm});
+        return (String)_ret;
+    }
+
+    public String newPlaneDB(String airplane_name_prm,
+                             String airplane_code_prm, String seats_prm,
+                             String airplane_length_prm,
+                             String airplane_height_prm,
+                             String airplane_weight_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"newPlaneDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {airplane_name_prm, airplane_code_prm, seats_prm, airplane_length_prm, airplane_height_prm, airplane_weight_prm});
+        return (String)_ret;
+    }
+
+    public String newFlightDB(String src_prm, String dest_prm,
+                              String departHour_prm, String departDay_prm,
+                              String duration_prm, String noSeats_prm,
+                              String price_prm, String airplane_id_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"newFlightDB",new String [] {"java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String","java.lang.String"},new Object[] {src_prm, dest_prm, departHour_prm, departDay_prm, duration_prm, noSeats_prm, price_prm, airplane_id_prm});
+        return (String)_ret;
+    }
+
+    public String cancelRservationDB(String reservation_id_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"cancelRservationDB",new String [] {"java.lang.String"},new Object[] {reservation_id_prm});
         return (String)_ret;
     }
 }

@@ -32,7 +32,9 @@
     Kind="viewcriteria"
     Type="oracle.jbo.domain.Date"/>
   <SQLQuery>
-    <![CDATA[select flight_id, src, dest, departure_hour, departure_day, duration, no_of_seats, price from flights]]>
+    <![CDATA[select a.flight_id, b.airplane_name, a.src, a.dest, a.departure_hour, a.departure_day, a.duration, a.no_of_seats, a.price
+from flights a, airplanes b
+where a.airplane_id = b.airplane_id]]>
   </SQLQuery>
   <ViewAttribute
     Name="FlightId"
@@ -54,6 +56,27 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="ID_ZBOR"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AirplaneName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="AIRPLANE_NAME"
+    Expression="AIRPLANE_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AVION"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

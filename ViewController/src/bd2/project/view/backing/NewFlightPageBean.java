@@ -23,6 +23,7 @@ public class NewFlightPageBean {
     private RichInputText duration;
     private RichInputText noSeats;
     private RichInputText price;
+    private RichInputText airplane;
 
     public NewFlightPageBean() {
         super();
@@ -89,7 +90,7 @@ public class NewFlightPageBean {
         if (src.getValue() == null || dest.getValue() == null ||
             departDay.getValue() == null || departHour.getValue() == null ||
             duration.getValue() == null || noSeats.getValue() == null ||
-            price.getValue() == null) {
+            price.getValue() == null || airplane.getValue() == null) {
 
             System.out.println("Este necesar sa completati toate campurile!");
             FacesMessage fm = new FacesMessage();
@@ -115,8 +116,17 @@ public class NewFlightPageBean {
         params.put("duration_prm", duration.getValue().toString());
         params.put("noSeats_prm", noSeats.getValue().toString());
         params.put("price_prm", price.getValue().toString());
+        params.put("airplane_id_prm", airplane.getValue().toString());
         ob.execute();
 
         return "ok";
+    }
+
+    public void setAirplane(RichInputText airplane) {
+        this.airplane = airplane;
+    }
+
+    public RichInputText getAirplane() {
+        return airplane;
     }
 }

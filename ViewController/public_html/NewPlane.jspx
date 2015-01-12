@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle"
+         value="#{adfBundle['bd2.project.view.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:panelHeader text="#{viewcontrollerBundle.ADAUGARE_AVION}" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar">
+            <af:group id="g1">
+              <af:commandButton text="#{viewcontrollerBundle.ADAUGA_AVION}"
+                                id="cb1"
+                                action="#{backingBeanScope.new_plane.addNewPlane}"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:commandButton text="#{viewcontrollerBundle.INAPOI}" id="cb2"
+                                action="back"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="pfl1">
+            <f:facet name="footer"/>
+            <af:inputText label="Nume" id="it1"
+                          binding="#{backingBeanScope.new_plane.airplane_name_prm}"
+                          showRequired="true"/>
+            <af:inputText label="Cod" id="it2"
+                          binding="#{backingBeanScope.new_plane.airplane_code_prm}"
+                          showRequired="true"/>
+            <af:inputText label="#{viewcontrollerBundle.NUMAR_LOCURI}" id="it3"
+                          binding="#{backingBeanScope.new_plane.seats_prm}"
+                          showRequired="true"/>
+            <af:inputText label="Lungime" id="it4"
+                          binding="#{backingBeanScope.new_plane.airplane_length_prm}"
+                          showRequired="true"/>
+            <af:inputText label="Inaltime" id="it5"
+                          binding="#{backingBeanScope.new_plane.airplane_height_prm}"
+                          showRequired="true"/>
+            <af:inputText label="Greutate max la decolare" id="it6"
+                          binding="#{backingBeanScope.new_plane.airplane_weight_prm}"
+                          showRequired="true"/>
+          </af:panelFormLayout>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

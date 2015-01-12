@@ -13,7 +13,12 @@
       <af:form id="f2">
         <af:panelHeader text="#{viewcontrollerBundle.INREGISTRARE}" id="ph1">
           <f:facet name="context"/>
-          <f:facet name="menuBar"/>
+          <f:facet name="menuBar">
+            <af:toolbar id="t2">
+              <af:commandButton text="#{viewcontrollerBundle.INAPOI}" id="cb2"
+                                action="ok"/>
+            </af:toolbar>
+          </f:facet>
           <f:facet name="toolbar">
             <af:toolbar id="t1">
               <af:commandButton text="#{viewcontrollerBundle.CREEAZA_CONT}" id="cb1"

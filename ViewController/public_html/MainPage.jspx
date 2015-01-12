@@ -20,13 +20,18 @@
                               id="ph2">
                 <f:facet name="context"/>
                 <f:facet name="menuBar">
-                  <af:commandButton text="#{viewcontrollerBundle.IESIRE_DIN_CONT}"
-                                    id="cb3"
-                                    action="#{backingBeanScope.mainPage_bean.logout}"/>
+                  <af:group id="g1">
+                    <af:panelGroupLayout id="pgl9" layout="vertical">
+                      <af:outputText value="User: #{pageFlowScope.user_prm}"
+                                     id="ot51"
+                                     inlineStyle="font-size:xx-small; font-style:italic;"/>
+                      <af:commandButton text="#{viewcontrollerBundle.IESIRE_DIN_CONT}"
+                                        id="cb3"
+                                        action="#{backingBeanScope.mainPage_bean.logout}"/>
+                    </af:panelGroupLayout>
+                  </af:group>
                 </f:facet>
-                <f:facet name="toolbar">
-                  <af:outputText value="User: #{pageFlowScope.user_prm}" id="ot51"/>
-                </f:facet>
+                <f:facet name="toolbar"/>
                 <f:facet name="legend"/>
                 <f:facet name="info"/>
               </af:panelHeader>
@@ -40,18 +45,18 @@
                 <af:showDetailItem text="Zboruri" id="sdi1"
                                    stretchChildren="first">
                   <af:panelGroupLayout layout="scroll" id="pgl1">
-                    <af:panelGroupLayout layout="vertical" id="pgl5">
-                      <af:panelHeader text="#{viewcontrollerBundle.CAUTA_ZBORURI}" id="ph3">
-                        <af:query id="qryId2"
+                    <af:panelGroupLayout layout="vertical" id="pgl10">
+                      <af:panelHeader text="#{viewcontrollerBundle.CAUTA_ZBORURI}" id="ph7">
+                        <af:query id="qryId1"
                                   headerText="#{viewcontrollerBundle.CRITERII_DE_CAUTARE_ZBOR}"
-                                  value="#{bindings.FlightsVOCriteriaQuery.queryDescriptor}"
-                                  model="#{bindings.FlightsVOCriteriaQuery.queryModel}"
-                                  queryListener="#{bindings.FlightsVOCriteriaQuery.processQuery}"
+                                  disclosed="true"
+                                  value="#{bindings.FlightsVOCriteriaQuery1.queryDescriptor}"
+                                  model="#{bindings.FlightsVOCriteriaQuery1.queryModel}"
+                                  queryListener="#{bindings.FlightsVOCriteriaQuery1.processQuery}"
                                   queryOperationListener="#{backingBeanScope.mainPage_bean.queryOperationListener}"
-                                  resultComponentId="::pc3:resId2"
-                                  disclosed="true"/>
+                                  resultComponentId="::pc7:resId1"/>
                       </af:panelHeader>
-                      <af:panelCollection id="pc3" styleClass="AFStretchWidth">
+                      <af:panelCollection id="pc7" styleClass="AFStretchWidth">
                         <f:facet name="menus"/>
                         <f:facet name="toolbar">
                           <af:toolbar id="t1">
@@ -77,72 +82,86 @@
                           </af:toolbar>
                         </f:facet>
                         <f:facet name="statusbar"/>
-                        <af:table value="#{bindings.FlightsVO.collectionModel}"
+                        <af:table value="#{bindings.FlightsVO1.collectionModel}"
                                   var="row"
-                                  rows="#{bindings.FlightsVO.rangeSize}"
-                                  emptyText="#{bindings.FlightsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                  fetchSize="#{bindings.FlightsVO.rangeSize}"
+                                  rows="#{bindings.FlightsVO1.rangeSize}"
+                                  emptyText="#{bindings.FlightsVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  fetchSize="#{bindings.FlightsVO1.rangeSize}"
                                   rowBandingInterval="0"
-                                  selectedRowKeys="#{bindings.FlightsVO.collectionModel.selectedRow}"
-                                  selectionListener="#{bindings.FlightsVO.collectionModel.makeCurrent}"
-                                  rowSelection="single" id="resId2"
+                                  filterModel="#{bindings.FlightsVOCriteriaQuery1.queryDescriptor}"
+                                  queryListener="#{bindings.FlightsVOCriteriaQuery1.processQuery}"
+                                  filterVisible="true" varStatus="vs"
+                                  selectedRowKeys="#{bindings.FlightsVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.FlightsVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" id="resId1"
                                   binding="#{backingBeanScope.mainPage_bean.t1}">
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.Src.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.Src.label}"
-                                     id="resId2c1">
-                            <af:outputText value="#{row.Src}" id="ot25"/>
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.AirplaneName.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.AirplaneName.label}"
+                                     id="resId1c1">
+                            <af:outputText value="#{row.AirplaneName}"
+                                           id="ot56"/>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.Dest.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.Dest.label}"
-                                     id="resId2c2">
-                            <af:outputText value="#{row.Dest}" id="ot29"/>
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.Src.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.Src.label}"
+                                     id="resId1c2">
+                            <af:outputText value="#{row.Src}" id="ot54"/>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureHour.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.DepartureHour.label}"
-                                     id="resId2c3">
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.Dest.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.Dest.label}"
+                                     id="resId1c3">
+                            <af:outputText value="#{row.Dest}" id="ot53"/>
+                          </af:column>
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.DepartureHour.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.DepartureHour.label}"
+                                     id="resId1c4">
                             <af:outputText value="#{row.DepartureHour}"
-                                           id="ot26">
+                                           id="ot59">
                               <af:convertNumber groupingUsed="false"
-                                                pattern="#{bindings.FlightsVO.hints.DepartureHour.format}"/>
+                                                pattern="#{bindings.FlightsVO1.hints.DepartureHour.format}"/>
                             </af:outputText>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.DepartureDay.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.DepartureDay.label}"
-                                     id="resId2c4">
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.DepartureDay.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.DepartureDay.label}"
+                                     id="resId1c5">
+                            <f:facet name="filter">
+                              <af:inputDate value="#{vs.filterCriteria.DepartureDay}"
+                                            id="id4"/>
+                            </f:facet>
                             <af:outputText value="#{row.DepartureDay}"
-                                           id="ot28">
-                              <af:convertDateTime pattern="#{bindings.FlightsVO.hints.DepartureDay.format}"/>
+                                           id="ot52">
+                              <af:convertDateTime pattern="#{bindings.FlightsVO1.hints.DepartureDay.format}"/>
                             </af:outputText>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.Duration.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.Duration.label}"
-                                     id="resId2c5">
-                            <af:outputText value="#{row.Duration}" id="ot27">
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.Duration.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.Duration.label}"
+                                     id="resId1c6">
+                            <af:outputText value="#{row.Duration}" id="ot58">
                               <af:convertNumber groupingUsed="false"
-                                                pattern="#{bindings.FlightsVO.hints.Duration.format}"/>
+                                                pattern="#{bindings.FlightsVO1.hints.Duration.format}"/>
                             </af:outputText>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.NoOfSeats.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.NoOfSeats.label}"
-                                     id="resId2c6">
-                            <af:outputText value="#{row.NoOfSeats}" id="ot20">
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.NoOfSeats.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.NoOfSeats.label}"
+                                     id="resId1c7">
+                            <af:outputText value="#{row.NoOfSeats}" id="ot55">
                               <af:convertNumber groupingUsed="false"
-                                                pattern="#{bindings.FlightsVO.hints.NoOfSeats.format}"/>
+                                                pattern="#{bindings.FlightsVO1.hints.NoOfSeats.format}"/>
                             </af:outputText>
                           </af:column>
-                          <af:column sortProperty="#{bindings.FlightsVO.hints.Price.name}"
-                                     sortable="true"
-                                     headerText="#{bindings.FlightsVO.hints.Price.label}"
-                                     id="resId2c7">
-                            <af:outputText value="#{row.Price}" id="ot24">
+                          <af:column sortProperty="#{bindings.FlightsVO1.hints.Price.name}"
+                                     filterable="true" sortable="true"
+                                     headerText="#{bindings.FlightsVO1.hints.Price.label}"
+                                     id="resId1c8">
+                            <af:outputText value="#{row.Price}" id="ot57">
                               <af:convertNumber groupingUsed="false"
-                                                pattern="#{bindings.FlightsVO.hints.Price.format}"/>
+                                                pattern="#{bindings.FlightsVO1.hints.Price.format}"/>
                             </af:outputText>
                           </af:column>
                         </af:table>
@@ -150,7 +169,7 @@
                     </af:panelGroupLayout>
                   </af:panelGroupLayout>
                 </af:showDetailItem>
-                <af:showDetailItem text="Cumpara bilete" id="sdi2"
+                <af:showDetailItem text="Bilete rezervate" id="sdi2"
                                    rendered="#{pageFlowScope.user_prm != 'admin'}">
                   <af:panelBox text="#{viewcontrollerBundle.REZERVARILE_DVS}"
                                id="pb1" showDisclosure="false">
@@ -181,6 +200,12 @@
                               </f:facet>
                             </af:dialog>
                           </af:popup>
+                          <af:spacer width="10" height="10" id="s5"/>
+                          <af:commandButton text="Anuleaza rezervarea" id="cb11"
+                                            actionListener="#{backingBeanScope.mainPage_bean.cancelReservation}">
+                            <af:setActionListener from="#{bindings.ReservationId.attributeValue}"
+                                                  to="#{pageFlowScope.ReservationIdPrm}"/>
+                          </af:commandButton>
                         </af:toolbar>
                       </f:facet>
                       <f:facet name="statusbar"/>
@@ -429,7 +454,12 @@ pas pentru a construi cu rabdare si devotament aceasta agentie de turism prezent
                           <af:panelCollection id="pc4"
                                               styleClass="AFStretchWidth">
                             <f:facet name="menus"/>
-                            <f:facet name="toolbar"/>
+                            <f:facet name="toolbar">
+                              <af:toolbar id="t9">
+                                <af:commandButton text="#{viewcontrollerBundle.ADAUGA_AVION}"
+                                                  id="cb10" action="newPlane"/>
+                              </af:toolbar>
+                            </f:facet>
                             <f:facet name="statusbar"/>
                             <af:table value="#{bindings.AirplanesVO.collectionModel}"
                                       var="row"

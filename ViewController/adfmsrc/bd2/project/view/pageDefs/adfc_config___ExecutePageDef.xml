@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="adfc_config___ExecutePageDef"
+                Package="bd2.project.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="PilotsVO" RangeSize="25"
+              DataControl="BD2ProjectAppModuleDataControl"
+              id="PilotsVOIterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PilotsVOIterator" id="Execute"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

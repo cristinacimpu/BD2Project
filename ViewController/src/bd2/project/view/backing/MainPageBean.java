@@ -59,7 +59,6 @@ public class MainPageBean {
     }
 
     public void buyTicket(ActionEvent actionEvent) {
-        //System.out.println("Am cumparat.");
 
         FacesContext fctx;
         fctx = FacesContext.getCurrentInstance();
@@ -107,6 +106,20 @@ public class MainPageBean {
 
         card_no.setValue("");
     }
+    
+    public void cancelReservation(ActionEvent actionEvent) {
+        BindingContainer bindings =
+            BindingContext.getCurrent().getCurrentBindingsEntry();
+        OperationBinding ob = bindings.getOperationBinding("cancelRservationDB");
+        Map params = ob.getParamsMap();
+        params.put("reservation_id_prm",
+                   ADFContext.getCurrent().getPageFlowScope().get("ReservationIdPrm").toString());
+        ob.execute();
+        
+        OperationBinding ob1 =
+            bindings.getOperationBinding("ExecuteWithParams");
+        ob1.execute();
+    }
 
     public void cancelFlight(ActionEvent actionEvent) {
         BindingContainer bindings =
@@ -145,7 +158,7 @@ public class MainPageBean {
     }
     
     public void queryOperationListener(QueryOperationEvent queryOperationEvent) {
-        invokeMethodExpression("#{bindings.FlightsVOCriteriaQuery.processQueryOperation}",
+        invokeMethodExpression("#{bindings.FlightsVOCriteriaQuery1.processQueryOperation}",
                                Object.class, QueryOperationEvent.class,
                                queryOperationEvent);
 

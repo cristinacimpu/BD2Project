@@ -135,6 +135,14 @@ public class NewAccountPageBean {
                 params.put("username_prm", username.getValue().toString());
                 params.put("passwd_prm", password.getValue().toString());
                 ob.execute();
+                String result = ob.getResult().toString();
+                if (result.startsWith("N")) {
+                    FacesMessage fm = new FacesMessage();
+                    fm.setDetail(result.substring(1));
+                    fm.setSeverity(FacesMessage.SEVERITY_INFO);
+                    FacesContext.getCurrentInstance().addMessage(null, fm);
+                    return null;
+                }
                 return "ok";
             } else {
                 FacesMessage fm = new FacesMessage();

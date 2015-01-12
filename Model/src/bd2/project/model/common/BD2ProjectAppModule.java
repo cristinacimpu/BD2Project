@@ -17,9 +17,6 @@ public interface BD2ProjectAppModule extends ApplicationModule {
                               String phone_prm, String email_prm,
                               String username_prm, String passwd_prm);
 
-    String newFlightDB(String src_prm, String dest_prm, String departHour_prm,
-                       String departDay_prm, String duration_prm,
-                       String noSeats_prm, String price_prm);
 
     String cancelFlightDB(String flightId);
 
@@ -29,4 +26,15 @@ public interface BD2ProjectAppModule extends ApplicationModule {
                       String lastname_prm, String address_prm,
                       String phone_prm, String sal_prm, String rank_prm,
                       String hiredate_prm, String comm_prm);
+
+    String newPlaneDB(String airplane_name_prm, String airplane_code_prm,
+                      String seats_prm, String airplane_length_prm,
+                      String airplane_height_prm, String airplane_weight_prm);
+
+    String newFlightDB(String src_prm, String dest_prm, String departHour_prm,
+                       String departDay_prm, String duration_prm,
+                       String noSeats_prm, String price_prm,
+                       String airplane_id_prm);
+
+    String cancelRservationDB(String reservation_id_prm);
 }

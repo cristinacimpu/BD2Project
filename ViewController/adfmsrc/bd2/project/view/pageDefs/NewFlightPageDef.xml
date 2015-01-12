@@ -20,6 +20,7 @@
       <NamedData NDName="duration_prm" NDType="java.lang.String"/>
       <NamedData NDName="noSeats_prm" NDType="java.lang.String"/>
       <NamedData NDName="price_prm" NDType="java.lang.String"/>
+      <NamedData NDName="airplane_id_prm" NDType="java.lang.String"/>
     </methodAction>
   </bindings>
 </pageDefinition>

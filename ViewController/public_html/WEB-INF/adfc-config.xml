@@ -36,6 +36,21 @@
   <view id="NewPilot">
     <page>/NewPilot.jspx</page>
   </view>
+  <method-call id="Execute">
+    <method>#{bindings.Execute.execute}</method>
+    <outcome id="__92">
+      <fixed-outcome>ExecuteViewPilots</fixed-outcome>
+    </outcome>
+  </method-call>
+  <view id="NewPlane">
+    <page>/NewPlane.jspx</page>
+  </view>
+  <method-call id="Execute1">
+    <method>#{bindings.Execute.execute}</method>
+    <outcome id="__110">
+      <fixed-outcome>ExecuteViewAirplanes</fixed-outcome>
+    </outcome>
+  </method-call>
   <control-flow-rule id="__9">
     <from-activity-id id="__10">Login</from-activity-id>
     <control-flow-case id="__12">
@@ -64,6 +79,10 @@
     <control-flow-case id="__84">
       <from-outcome id="__86">newPilot</from-outcome>
       <to-activity-id id="__85">NewPilot</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__103">
+      <from-outcome id="__104">newPlane</from-outcome>
+      <to-activity-id id="__102">NewPlane</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__28">
@@ -116,7 +135,36 @@
     <from-activity-id id="__88">NewPilot</from-activity-id>
     <control-flow-case id="__90">
       <from-outcome id="__91">ok</from-outcome>
-      <to-activity-id id="__89">MainPage</to-activity-id>
+      <to-activity-id id="__89">Execute</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__119">
+      <from-outcome id="__121">back</from-outcome>
+      <to-activity-id id="__120">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__93">
+    <from-activity-id id="__94">Execute</from-activity-id>
+    <control-flow-case id="__96">
+      <from-outcome id="__97">ExecuteViewPilots</from-outcome>
+      <to-activity-id id="__95">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__105">
+    <from-activity-id id="__106">NewPlane</from-activity-id>
+    <control-flow-case id="__107">
+      <from-outcome id="__109">ok</from-outcome>
+      <to-activity-id id="__108">Execute1</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__117">
+      <from-outcome id="__118">back</from-outcome>
+      <to-activity-id id="__116">MainPage</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__111">
+    <from-activity-id id="__112">Execute1</from-activity-id>
+    <control-flow-case id="__113">
+      <from-outcome id="__115">ExecuteViewAirplanes</from-outcome>
+      <to-activity-id id="__114">MainPage</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__2">
@@ -153,5 +201,10 @@
     <managed-bean-name id="__83">new_pilot</managed-bean-name>
     <managed-bean-class id="__81">bd2.project.view.backing.NewPilotPageBean</managed-bean-class>
     <managed-bean-scope id="__80">backingBean</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__100">
+    <managed-bean-name id="__99">new_plane</managed-bean-name>
+    <managed-bean-class id="__98">bd2.project.view.backing.NewPlanePageBean</managed-bean-class>
+    <managed-bean-scope id="__101">backingBean</managed-bean-scope>
   </managed-bean>
 </adfc-config>

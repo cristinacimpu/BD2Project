@@ -50,6 +50,9 @@
             <af:inputText label="#{viewcontrollerBundle.PRET}"
                           id="it7" showRequired="true"
                           binding="#{backingBeanScope.new_flight.price}"/>
+            <af:inputText label="#{viewcontrollerBundle.ID_AVION}" id="it4"
+                          showRequired="true"
+                          binding="#{backingBeanScope.new_flight.airplane}"/>
           </af:panelFormLayout>
         </af:panelHeader>
       </af:form>

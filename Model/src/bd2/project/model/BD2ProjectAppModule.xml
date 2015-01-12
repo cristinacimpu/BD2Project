@@ -116,32 +116,6 @@
         Type="java.lang.String"/>
     </Method>
     <Method
-      Name="newFlightDB">
-      <Return
-        Type="java.lang.String"/>
-      <Parameter
-        Name="src_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="dest_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="departHour_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="departDay_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="duration_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="noSeats_prm"
-        Type="java.lang.String"/>
-      <Parameter
-        Name="price_prm"
-        Type="java.lang.String"/>
-    </Method>
-    <Method
       Name="cancelFlightDB">
       <Return
         Type="java.lang.String"/>
@@ -184,6 +158,66 @@
         Type="java.lang.String"/>
       <Parameter
         Name="comm_prm"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="newPlaneDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_name_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_code_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="seats_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_length_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_height_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_weight_prm"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="newFlightDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="src_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="dest_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="departHour_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="departDay_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="duration_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="noSeats_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="price_prm"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="airplane_id_prm"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="cancelRservationDB">
+      <Return
+        Type="java.lang.String"/>
+      <Parameter
+        Name="reservation_id_prm"
         Type="java.lang.String"/>
     </Method>
   </ClientInterface>

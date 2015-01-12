@@ -65,11 +65,11 @@ public class NewPilotPageBean {
         params.put("cnp_prm", cnp.getValue().toString());
         params.put("firstname_prm", firstname.getValue().toString());
         params.put("lastname_prm", lastname.getValue().toString());
-        params.put("address_prm", date);
+        params.put("address_prm", address.getValue().toString());
         params.put("phone_prm", phone.getValue().toString());
         params.put("sal_prm", sal.getValue().toString());
         params.put("rank_prm", job);
-        params.put("hiredate_prm", hiredate.getValue().toString());
+        params.put("hiredate_prm", date);
         params.put("comm_prm", comm.getValue().toString());
         ob.execute();
 
