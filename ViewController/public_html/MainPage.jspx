@@ -509,7 +509,7 @@ pas pentru a construi cu rabdare si devotament aceasta agentie de turism prezent
                               </af:column>
                               <af:column sortProperty="#{bindings.AirplanesVO.hints.AirplaneLength.name}"
                                          filterable="true" sortable="true"
-                                         headerText="#{bindings.AirplanesVO.hints.AirplaneLength.label}"
+                                         headerText="#{bindings.AirplanesVO.hints.AirplaneLength.label} (m)"
                                          id="c20">
                                 <af:outputText value="#{row.AirplaneLength}"
                                                id="ot36">
@@ -519,7 +519,7 @@ pas pentru a construi cu rabdare si devotament aceasta agentie de turism prezent
                               </af:column>
                               <af:column sortProperty="#{bindings.AirplanesVO.hints.AirplaneHeight.name}"
                                          filterable="true" sortable="true"
-                                         headerText="#{bindings.AirplanesVO.hints.AirplaneHeight.label}"
+                                         headerText="#{bindings.AirplanesVO.hints.AirplaneHeight.label} (m)"
                                          id="c16">
                                 <af:outputText value="#{row.AirplaneHeight}"
                                                id="ot33">
@@ -529,7 +529,7 @@ pas pentru a construi cu rabdare si devotament aceasta agentie de turism prezent
                               </af:column>
                               <af:column sortProperty="#{bindings.AirplanesVO.hints.AirplaneWeight.name}"
                                          filterable="true" sortable="true"
-                                         headerText="#{bindings.AirplanesVO.hints.AirplaneWeight.label}"
+                                         headerText="#{bindings.AirplanesVO.hints.AirplaneWeight.label} (t)"
                                          id="c21">
                                 <af:outputText value="#{row.AirplaneWeight}"
                                                id="ot31">

@@ -59,6 +59,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="14"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CNP"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Firstname"
@@ -74,6 +80,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PRENUME"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Lastname"
@@ -89,6 +101,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUME"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Address"
@@ -104,6 +122,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="255"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ADRESA"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="PhoneNo"
@@ -120,6 +144,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="11"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUMAR_TELEFON"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Email"
@@ -165,6 +195,12 @@ where username = :username_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="55"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PAROLA"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="Username"/>

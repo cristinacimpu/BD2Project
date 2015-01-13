@@ -39,12 +39,6 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
         return (String)_ret;
     }
 
-    public String buyTicketDB(String reservation_id, String card_no) {
-        Object _ret =
-            this.riInvokeExportedMethod(this,"buyTicketDB",new String [] {"java.lang.String","java.lang.String"},new Object[] {reservation_id, card_no});
-        return (String)_ret;
-    }
-
     public String createNewAccountDB(String cnp_prm, String firstname_prm,
                                      String lastname_prm, String address_prm,
                                      String phone_prm, String email_prm,
@@ -97,6 +91,13 @@ public class BD2ProjectAppModuleClient extends ApplicationModuleImpl implements 
     public String cancelRservationDB(String reservation_id_prm) {
         Object _ret =
             this.riInvokeExportedMethod(this,"cancelRservationDB",new String [] {"java.lang.String"},new Object[] {reservation_id_prm});
+        return (String)_ret;
+    }
+
+    public String buyTicketDB(String reservation_id, String card_no,
+                              String username_prm) {
+        Object _ret =
+            this.riInvokeExportedMethod(this,"buyTicketDB",new String [] {"java.lang.String","java.lang.String","java.lang.String"},new Object[] {reservation_id, card_no, username_prm});
         return (String)_ret;
     }
 }

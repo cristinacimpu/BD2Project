@@ -59,6 +59,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PLECARE"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Dest"
@@ -74,6 +80,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SOSIRE"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DepartureHour"
@@ -90,6 +102,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ORA_PLECARE"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="DepartureDay"
@@ -104,6 +122,16 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="bd2.project.model.view.FlightByID.DepartureDay_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="bd2.project.model.view.FlightByID.DepartureDay_FMT_FORMAT"/>
+        <LABEL
+          ResId="DATA_PLECARE"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Duration"
@@ -120,6 +148,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DURATA"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="NoOfSeats"
@@ -136,6 +170,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NUMAR_LOCURI"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Price"
@@ -152,6 +192,12 @@ where flight_id = :flight_id_prm]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PRET"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle

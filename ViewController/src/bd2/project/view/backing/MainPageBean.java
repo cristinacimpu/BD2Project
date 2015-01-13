@@ -83,6 +83,7 @@ public class MainPageBean {
         params.put("reservation_id",
                    ADFContext.getCurrent().getPageFlowScope().get("ReservationIdPrm").toString());
         params.put("card_no", card_noStr);
+        params.put("username_prm", ADFContext.getCurrent().getPageFlowScope().get("user_prm").toString());
         ob.execute();
 
         String result = ob.getResult().toString();

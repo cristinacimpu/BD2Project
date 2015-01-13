@@ -10,7 +10,6 @@ public interface BD2ProjectAppModule extends ApplicationModule {
 
     String doReservationDB(String userName, String flightId);
 
-    String buyTicketDB(String reservation_id, String card_no);
 
     String createNewAccountDB(String cnp_prm, String firstname_prm,
                               String lastname_prm, String address_prm,
@@ -37,4 +36,7 @@ public interface BD2ProjectAppModule extends ApplicationModule {
                        String airplane_id_prm);
 
     String cancelRservationDB(String reservation_id_prm);
+
+    String buyTicketDB(String reservation_id, String card_no,
+                       String username_prm);
 }

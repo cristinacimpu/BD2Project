@@ -59,15 +59,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <methodAction id="buyTicketDB"
-                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
-                  DataControl="BD2ProjectAppModuleDataControl"
-                  RequiresUpdateModel="true" Action="invokeMethod"
-                  MethodName="buyTicketDB" IsViewObjectMethod="false"
-                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.buyTicketDB_BD2ProjectAppModuleDataControl_dataProvider_buyTicketDB_result">
-      <NamedData NDName="reservation_id" NDValue="" NDType="java.lang.String"/>
-      <NamedData NDName="card_no" NDValue="" NDType="java.lang.String"/>
-    </methodAction>
     <attributeValues IterBinding="ReservationsVOIterator" id="ReservationId">
       <AttrNames>
         <Item Value="ReservationId"/>
@@ -185,6 +176,16 @@
                   MethodName="cancelRservationDB" IsViewObjectMethod="false"
                   ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.cancelRservationDB_BD2ProjectAppModuleDataControl_dataProvider_cancelRservationDB_result">
       <NamedData NDName="reservation_id_prm" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction id="buyTicketDB"
+                  InstanceName="BD2ProjectAppModuleDataControl.dataProvider"
+                  DataControl="BD2ProjectAppModuleDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="buyTicketDB" IsViewObjectMethod="false"
+                  ReturnName="data.BD2ProjectAppModuleDataControl.methodResults.buyTicketDB_BD2ProjectAppModuleDataControl_dataProvider_buyTicketDB_result">
+      <NamedData NDName="reservation_id" NDType="java.lang.String"/>
+      <NamedData NDName="card_no" NDType="java.lang.String"/>
+      <NamedData NDName="username_prm" NDType="java.lang.String"/>
     </methodAction>
   </bindings>
 </pageDefinition>

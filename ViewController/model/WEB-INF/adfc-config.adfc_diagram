@@ -68,7 +68,7 @@
       <property
          name="fromOutcome">goToReservation</property>
       <property
-         name="sdm:polyPoints">R70,949.85156,226.98828,B44</property>
+         name="sdm:polyPoints">R70,731.9258,226.98828,731.9258,227.98828,L46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -89,9 +89,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">88.94238</property>
+         name="y">231.83887</property>
       <property
-         name="x">953.35156</property>
+         name="x">977.35156</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -101,7 +101,7 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">B56,956.85156,341.6836,R50</property>
+         name="sdm:polyPoints">L54,752.6885,234.98828,T50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall12">
@@ -112,9 +112,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">342.03418</property>
+         name="y">341.333</property>
       <property
-         name="x">743.6885</property>
+         name="x">752.6885</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
@@ -124,7 +124,7 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">L50,615.522,341.6836,615.522,342.63184,R50</property>
+         name="sdm:polyPoints">L50,620.022,340.98242,620.022,342.63184,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -262,7 +262,7 @@
       <property
          name="fromOutcome">newPilot</property>
       <property
-         name="sdm:polyPoints">R54,771.0,212.98828,B44</property>
+         name="sdm:polyPoints">R62,778.0,219.98828,B56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -308,9 +308,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">-41.408203</property>
+         name="y">-41.109375</property>
       <property
-         name="x">569.5</property>
+         name="x">582.5</property>
    </View>
    <ControlFlowCase
       islink="true"
@@ -320,7 +320,7 @@
       <property
          name="fromOutcome">newPlane</property>
       <property
-         name="sdm:polyPoints">R38,573.0,198.98828,B56</property>
+         name="sdm:polyPoints">R30,579.0,191.98828,B44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -330,7 +330,7 @@
       <property
          name="fromOutcome">ok</property>
       <property
-         name="sdm:polyPoints">L50,524.5,-41.75879,524.5,-41.304688,R50</property>
+         name="sdm:polyPoints">L50,531.0,-41.45996,531.0,-41.304688,R50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall33">
@@ -353,7 +353,7 @@
       <property
          name="fromOutcome">ExecuteViewAirplanes</property>
       <property
-         name="sdm:polyPoints">B50,479.5,84.44238,486.5,84.44238,T50</property>
+         name="sdm:polyPoints">B50,479.5,84.0918,486.5,84.0918,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -363,7 +363,7 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">B44,566.0,191.98828,R30</property>
+         name="sdm:polyPoints">B56,586.0,198.98828,R38</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -373,6 +373,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">B56,778.0,219.98828,R62</property>
+         name="sdm:polyPoints">B44,771.0,212.98828,R54</property>
    </ControlFlowCase>
 </SDM>

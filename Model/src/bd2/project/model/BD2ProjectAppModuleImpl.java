@@ -89,7 +89,7 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
         }
     }
 
-    public String buyTicketDB(String reservation_id, String card_no) {
+    public String buyTicketDB(String reservation_id, String card_no, String username_prm) {
         CallableStatement st = null;
         String rezult = null;
         Integer rez;
@@ -99,13 +99,14 @@ public class BD2ProjectAppModuleImpl extends ApplicationModuleImpl implements BD
             ps = getDBTransaction().createPreparedStatement("commit", 1);
             conn = ps.getConnection();
             st =
- getDBTransaction().createCallableStatement("begin" + " client.buy_ticket(:1, :2, :3); end;",
+ getDBTransaction().createCallableStatement("begin" + " client.buy_ticket(:1, :2, :3, :4); end;",
                                             0);
-            st.registerOutParameter(3, OracleTypes.CHAR);
+            st.registerOutParameter(4, OracleTypes.CHAR);
             st.setString(1, reservation_id);
             st.setString(2, card_no);
+            st.setString(3, username_prm);
             st.execute();
-            rezult = st.getString(3);
+            rezult = st.getString(4);
 
             st.close();
             ps.close();
